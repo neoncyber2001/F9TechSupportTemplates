@@ -66,19 +66,13 @@ mNameId=
 SendInput, %mNameId%
 return
 
-
-;@Station Support
-^Numpad8::
-statsupp=
+;@inactive
+::.inact::
+mInact=
 (
-Employee phone number:
-Device type:
-Issue:
-Device name: 
-Device IP address: 
-Location: [Airport, Gate Number]
+Account disabled due to inactivity. Reactivated and advised to wait 10 min before logging in.
 )
-SendInput, %statsupp%
+SendInput, %mInact%
 return
 
 
@@ -178,81 +172,6 @@ SendInput, %pass%
 return
 
 
-;@Flica Support
-::.flica::
-flica=
-(
-User requests assistance accessing Flica.
-Informed user to contact Flica support at 1-800-659-9859.
-)
-SendInput, %flica%
-return
-
-
-;@CrewTrac Support
-::.crewtrac::
-crewtrac=
-(
-User requests assistance accessing CrewTrac.
-Informed user to contact CrewTrac support at crewschedulingsupervisors@flyfrontier.com or 720-374-4540.
-)
-SendInput, %crewtrac%
-return
-
-
-;@AvioBook/EFB
-::.efb::
-efb=
-(
-User requests assistance with AvioBook/EFB beyond logging in.
-Informed user to contact EFB at 720-295-7478.
-)
-SendInput, %efb%
-return
-
-
-;@FlyTab
-::.flytab::
-flytab=
-(
-User requests assistance with their FlyTab.
-Informed user to contact FlyTab support at 888-270-1510.
-)
-SendInput, %flytab%
-return
-
-
-;@Trax
-::.trax::
-trax=
-(
-User requests password reset for Trax.
-Informed user to contact Trax support at TraxBusAdmin@flyfrontier.com.
-)
-SendInput, %trax%
-return
-
-
-;@ID90
-::.id90::
-id90=
-(
-User requests assistance accessing ID90.
-Informed user to contact ID90 support at 877-298-5233.
-)
-SendInput, %id90%
-return
-
-
-;@MyIDTravel.com
-::.idtravel::
-(
-User requests assistance with MyIDTravel beyond signing in.
-Informed user to contact MyIDTravel support at F9pass@flyfrontier.com for further assistance.
-)
-SendInput, %idtravel%
-return
-
 ;@Reactivation Approval
 ::.approve::
 approve=
@@ -267,7 +186,7 @@ return
 ::.msauth::
 msAuthen=
 (
-User requesting assistance with MS Authenticator Setup / Access. Walked user through setup process.
+User requesting assistance with MS Authenticator Setup / Acces. Walked user through setup process.
 )
 SendInput,%msAuthen%
 return
@@ -283,7 +202,7 @@ SendInput, %vpn%
 return
 
 
-;@Name:NetworkShare Access
+;@Name:NetworkShare Acces
 ;@hk
 ::.share::
 share=
@@ -356,27 +275,6 @@ Thanks for contacting the IT Support Help Desk, I’m happy to assist you with t
 )
 
 SendInput, %einfo%
-return
-
-;@ProsafeT activation
-::.prosafet::
-code=
-(
-User is requesting the activation code for ProSafeT. 
-Provided activation code 4D25-BE28-93CA-8088.
-Verified activation.
-)
-SendInput, %code%
-return
-
-;@Single Sign On
-::.sso::
-sso=
-(
-User's account in this service is Single Sign On.
-Advised user access this service via the employee portal: MyFrontier.org
-)
-SendInput, %sso%
 return
 
 ;@reactivation
