@@ -278,7 +278,7 @@ return
 ::.approve::
 approve=
 (
-User deactivated, Reactivation approval provided by [SupervisorName] - [SupervisorID].
+User disabled/deactivated. Reactivation approval provided by [SupervisorName] - [SupervisorID].
 )
 SendInput, %approve%
 return
@@ -399,16 +399,6 @@ Advised user access this service via the employee portal: MyFrontier.org
 )
 SendInput, %sso%
 return
-
-;@reactivation
-::.react::
-react=
-(
-Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
-)
-SendInput, %react%
-return
-
 
 ;@Password Requirements
 ::.passreq::
