@@ -92,7 +92,7 @@ SendInput, %pass%
 return
 
 
-;@Password Reset Request Navitaire
+;@Password Reset Request Navitaire GoNow
 ::.gonow::
 pass=
 (
@@ -104,7 +104,7 @@ SendInput, %pass%
 return
 
 
-;@Password Reset Request Navitaire
+;@Password Reset Request Navitaire SkySpeed
 ::.skyspeed::
 pass=
 (
@@ -149,6 +149,28 @@ Unlocked Account / Reset Password
 Verified Access.
 )
 SendInput, %pass%
+return
+
+
+;@Contractor AD Account Expiration
+::.expcon::
+exp=
+(
+User AD account has been expired as of [MM/DD/YYYY].
+User is a Contractor; extended date of expiration to 3 months.
+)
+SendInput, %exp%
+return
+
+
+;@Permanent Employee AD Account Expiration
+::.expperm::
+exp=
+(
+User AD account has been expired as of [MM/DD/YYYY].
+User is a Permanent Employee; extended date of expiration to never expire.
+)
+SendInput, %exp%
 return
 
 
@@ -378,6 +400,11 @@ return
 ;@Password Requirements
 ::.passreq::
 (
-SendInput, Your new password is required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain your name or a password that has been used before.
+Your new password is required to be at-least 8 characters long, it must include at-least:
+	-one capital letter
+	-one lowercase letter
+	-one number
+	-one special character. 
+It must not contain your name or a password that has been used in the past two years at Frontier Airlines.
 )
 return
