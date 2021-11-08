@@ -117,6 +117,18 @@ SendInput, %pass%
 return
 
 
+;@Password Reset Request LMC
+::.lmc::
+pass=
+(
+User requests password reset for Loyalty Management Console.
+Unlocked Account / Reset Password
+Verified Access.
+)
+SendInput, %pass%
+return
+
+
 ;@Password Reset Request Schoox
 ::.schoox::
 pass=
