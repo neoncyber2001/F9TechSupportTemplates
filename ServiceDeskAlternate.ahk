@@ -57,12 +57,13 @@ return
 ::.stations::
 statsupp=
 (
-Employee phone number:
-Device type:
-Issue:
-Device name: 
-Device IP address: 
-Location: [Airport, Gate Number]
+User ID:
+User Name: 
+Airport:
+Station ID:
+IP:
+Contact Phone:
+Problem / Issue:
 )
 SendInput, %statsupp%
 return
