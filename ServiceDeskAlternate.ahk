@@ -54,7 +54,7 @@ return
 
 
 ;@Station Support
-^Numpad8::
+::.stations::
 statsupp=
 (
 Employee phone number:
