@@ -277,6 +277,7 @@ return
 
 ;@MyIDTravel.com
 ::.idtravel::
+idtravel=
 (
 User requests assistance with MyIDTravel beyond signing in.
 Informed user to contact MyIDTravel support at F9pass@flyfrontier.com for further assistance.
