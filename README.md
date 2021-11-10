@@ -35,8 +35,8 @@ With your cursor in the "Customer" field.
 
 Control+Numpad0
 
-	\[EmployeeID\]
-	\[FirstNameLastName\]
+	[EmployeeID]
+	[FirstNameLastName]
 
 
 -------------------------------------------
@@ -58,17 +58,17 @@ Outage or Flight Delay Data Collection Template
 
 Control+Numpad5	
 
-	Reporting Location: \[Call Center / Department\]
-	By: \[FirstNameLastName\] - \[EmployeeID\]
-	Contact: \[Phone and/or Email\]
-	1.What is down? \[System Name\]
-	2.What are users unable to do? \[eg: Refunds, Book Flights\]
-	3.What location(s) are impacted? \[Physical Location\]
-	4.Does this cause any impact to any flights and what flights are impacted? \[Estimated Imact / Delays\]
-	5.If there are no flights impacted; does this issue have any financial impact? \[Estimated Financial Impact\]
-	6. What is the public IP address of the agents seeing the issue? \[PublicIP via https://www.whatismyip.com/ \]
-	7. Please send screenshots of any error messages that you are receiving. \[see attached\]
-	Sent Copy of Report to \[Incident Mgr\]
+	Reporting Location: [Call Center / Department]
+	By: [FirstNameLastName] - [EmployeeID]
+	Contact: [Phone and/or Email]
+	1.What is down? [System Name]
+	2.What are users unable to do? [eg: Refunds, Book Flights]
+	3.What location(s) are impacted? [Physical Location]
+	4.Does this cause any impact to any flights and what flights are impacted? [Estimated Imact / Delays]
+	5.If there are no flights impacted; does this issue have any financial impact? [Estimated Financial Impact]
+	6. What is the public IP address of the agents seeing the issue? [PublicIP via https://www.whatismyip.com/ ]
+	7. Please send screenshots of any error messages that you are receiving. [see attached]
+	Sent Copy of Report to [Incident Mgr]
 	
 ### Hotstrings
 The script uses "hotstrings" to automatically enter portions of template as you are typing. Each hotstring will begin with a "." and end with a sopace " ".
@@ -76,7 +76,7 @@ The script uses "hotstrings" to automatically enter portions of template as you 
 -------------------------------------------
 .pass
 
-	User requests password reset for \[System\]. Unlocked Account / Reset Password, Verified Access.
+	User requests password reset for [System]. Unlocked Account / Reset Password, Verified Access.
 	
 -------------------------------------------
 .ad
@@ -164,7 +164,7 @@ The script uses "hotstrings" to automatically enter portions of template as you 
 -------------------------------------------
 .react
 	
-	User deactivated, Reactivation approval provided by \[SupervisorName\] - \[SupervisorID\].
+	User deactivated, Reactivation approval provided by [SupervisorName] - [SupervisorID].
 
 -------------------------------------------
 .msauth
@@ -174,8 +174,8 @@ The script uses "hotstrings" to automatically enter portions of template as you 
 -------------------------------------------
 .share
 	
-	User requests \[Read/Read Write\] Access to the following Network Share	\[\\\\Network-Share\\Acccess\]
-	Approved by \[Leadership\]
+	User requests [Read/Read Write] Access to the following Network Share	[\\\\Network-Share\\Acccess]
+	Approved by [Leadership]
 	
 -------------------------------------------
 TODO: Email templates
