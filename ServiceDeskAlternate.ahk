@@ -247,7 +247,7 @@ return
 flytab=
 (
 User requests assistance with their FlyTab.
-Informed user to contact FlyTab support at 888-270-1510.
+Informed user to contact Reatail In Motion support at 888-270-1510.
 )
 SendInput, %flytab%
 return
@@ -427,16 +427,4 @@ return
 SendInput, Your new password is required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain your name or a password that has been used before.
 )
 return
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
+
