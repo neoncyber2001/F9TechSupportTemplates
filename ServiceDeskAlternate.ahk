@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@neoncyber2001 
-neoncyber2001
-/
-F9TechSupportTemplates
-Private
-2
-1
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-Settings
-F9TechSupportTemplates/ServiceDeskAlternate.ahk
-
-Herbert Merged Adam's changes which added FLICA hotkey
-Latest commit bcd43a3 5 days ago
- History
- 0 contributors
-398 lines (336 sloc)  8.35 KB
-   
 ;THIS IS THE TESTING VERSION.... PARTS OF THIS SCRIPT MAY BE BROKEN
 ;Frontier IT Service Desk AHK Template Script v0.0.0.5d
 ;Tested on Version AutoHotkey 1.1.33.10
@@ -76,13 +45,13 @@ return
 ^Numpad1::
 mStations=
 (
-	User ID:
-	User Name: 
-	Airpoart:
-	Station ID:
-	IP / NetworkDrop:
-	Contact Phone:
-	Problem / Issue:
+User ID:
+User Name: 
+Airpoart:
+Station ID:
+IP / NetworkDrop:
+Contact Phone:
+Problem / Issue:
 )
 SendInput, %mStations%
 return
