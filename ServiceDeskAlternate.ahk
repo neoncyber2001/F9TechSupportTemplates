@@ -397,3 +397,11 @@ SendInput, Your new password is required to be at-least 8 characters long, it mu
 )
 return
 
+;@Account Inactive
+::.inact::
+pass=
+(
+User account inactive - reactivated.
+)
+SendInput, %pass%
+return
