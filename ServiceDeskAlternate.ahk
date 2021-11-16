@@ -80,7 +80,7 @@ return
 
 
 ;@Password Reset Request Navitaire
-::.navataire::
+::.navitaire::
 pass=
 (
 User requests password reset for Navataire.
