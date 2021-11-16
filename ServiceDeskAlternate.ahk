@@ -47,9 +47,9 @@ mStations=
 (
 User ID:
 User Name: 
-Airpoart:
+Airport:
 Station ID:
-IP / NetworkDrop:
+IP / Network Drop:
 Contact Phone:
 Problem / Issue:
 )
@@ -64,21 +64,6 @@ mNameId=
 [FirstNameLastName]
 )
 SendInput, %mNameId%
-return
-
-
-;@Station Support
-^Numpad8::
-statsupp=
-(
-Employee phone number:
-Device type:
-Issue:
-Device name: 
-Device IP address: 
-Location: [Airport, Gate Number]
-)
-SendInput, %statsupp%
 return
 
 
