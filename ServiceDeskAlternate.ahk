@@ -130,6 +130,18 @@ SendInput, %pass%
 return
 
 
+;@Password Reset Request LMC
+::.lmc::
+pass=
+(
+User requests password reset for Loyalty Management Console.
+Unlocked Account / Reset Password
+Verified Access.
+)
+SendInput, %pass%
+return
+
+
 ;@Password Reset Request Schoox
 ::.schoox::
 pass=
@@ -251,15 +263,6 @@ User requests assistance with MyIDTravel beyond signing in.
 Informed user to contact MyIDTravel support at F9pass@flyfrontier.com for further assistance.
 )
 SendInput, %idtravel%
-return
-
-;@Reactivation Approval
-::.approve::
-approve=
-(
-User deactivated, Reactivation approval provided by [SupervisorName] - [SupervisorID].
-)
-SendInput, %approve%
 return
 
 
