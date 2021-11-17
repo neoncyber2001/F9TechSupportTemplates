@@ -46,7 +46,7 @@ Control+Numpad1
 
 	User ID:
 	User Name:
-	Airpoart:
+	Airport:
 	Station ID:
 	IP / NetworkDrop:
 	Contact Phone:
@@ -85,20 +85,20 @@ The script uses "hotstrings" to automatically enter portions of template as you 
 	Unlocked Account / Reset PasswordVerified Access.
 	
 -------------------------------------------
-.navataire
+.navitaire
 	
-	User requests password reset for Navataire.	Unlocked Account / Reset PasswordVerified Access.
+	User requests password reset for Navitaire.	Unlocked Account / Reset PasswordVerified Access.
 	
 -------------------------------------------
 .gonow
 	
-	User requests password reset for Navataire GoNow.
+	User requests password reset for Navitaire GoNow.
 	Unlocked Account / Reset PasswordVerified Access.
 	
 -------------------------------------------
 .skyspeed
 	
-	User requests password reset for Navataire Skyspeed.
+	User requests password reset for Navitaire Skyspeed.
 	Unlocked Account / Reset PasswordVerified Access.
 	
 	
