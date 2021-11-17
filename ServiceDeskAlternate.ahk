@@ -83,7 +83,7 @@ return
 ::.navitaire::
 pass=
 (
-User requests password reset for Navataire.
+User requests password reset for Navitaire.
 Unlocked Account / Reset Password
 Verified Access.
 )
@@ -95,7 +95,7 @@ return
 ::.gonow::
 pass=
 (
-User requests password reset for Navataire GoNow.
+User requests password reset for Navitaire GoNow.
 Unlocked Account / Reset Password
 Verified Access.
 )
@@ -107,7 +107,7 @@ return
 ::.skyspeed::
 pass=
 (
-User requests password reset for Navataire Skyspeed.
+User requests password reset for Navitaire Skyspeed.
 Unlocked Account / Reset Password
 Verified Access.
 )
