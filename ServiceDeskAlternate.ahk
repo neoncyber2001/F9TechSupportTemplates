@@ -187,10 +187,6 @@ SendInput, %pass%
 return
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;; Third Party Support ;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;@Flica Support
 ::.flica::
 flica=
