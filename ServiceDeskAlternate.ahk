@@ -175,6 +175,22 @@ SendInput, %pass%
 return
 
 
+;@Password Reset Request NetTracer
+::.nettracer::
+pass=
+(
+User requests password reset for NetTracer.
+Unlocked Account / Reset Password
+Verified Access.
+)
+SendInput, %pass%
+return
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; Third Party Support ;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;@Flica Support
 ::.flica::
 flica=
