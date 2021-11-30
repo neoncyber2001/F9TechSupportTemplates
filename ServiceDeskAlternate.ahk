@@ -242,6 +242,18 @@ SendInput, %trax%
 return
 
 
+
+;@Expire
+::.expired::
+expired=
+(
+Contractor AD account expired. Directed user to contact their frontier manager for reactivation in Contractor Portal.
+)
+SendInput, %expired%
+return
+
+
+
 ;@ID90
 ::.id90::
 id90=
