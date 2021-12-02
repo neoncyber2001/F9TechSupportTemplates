@@ -1,12 +1,10 @@
-;THIS IS THE TESTING VERSION.... PARTS OF THIS SCRIPT MAY BE BROKEN
-;Frontier IT Service Desk AHK Template Script v0.0.0.5d
-;Tested on Version AutoHotkey 1.1.33.10
-;Use CTRL+SHIFT+? for help.
-;
+;<title>Frontier IT Service Desk Template Script</title>
+;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
 ;;;;;;;;;;;;;;;;
-;@Default Customer Entry
+;<summary>Default Customer Entry</summary>
+;<remarks>todo</remarks>
 ^NumpadDot::
 	BlockInput, On
 	Sleep, 250
@@ -20,7 +18,8 @@ return
 
 
 ;;;;;;;;;;;;;;;;
-;@Outage Report
+;<summary>Outage Report</summary>
+;<remarks>todo</remarks>
 ^Numpad5::
 mOutage=
 (
@@ -41,7 +40,8 @@ Sent Copy of Report to [Incident Mgr]
 SendInput, %mOutage%
 return
 
-
+;<summary>Stations Ticket</summary>
+;<remarks>todo</remarks>
 ^Numpad1::
 mStations=
 (
@@ -67,7 +67,8 @@ SendInput, %mNameId%
 return
 
 
-;@Password Reset Request
+;<summary>Password Reset</summary>
+;<remarks>todo</remarks>
 ::.pass::
 pass=
 (
@@ -79,103 +80,98 @@ SendInput, %pass%
 return
 
 
-;@Password Reset Request Navitaire
+;<summary>Password Reset Request Navitaire</summary>
+;<remarks>todo</remarks>
 ::.navitaire::
 pass=
 (
-User requests password reset for Navitaire.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Navitaire. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request Navitaire
+;<summary>Password Reset Request GoNow</summary>
+;<remarks>todo</remarks>
 ::.gonow::
 pass=
 (
-User requests password reset for Navitaire GoNow.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request Navitaire
+;<summary>Password Reset Reuest Skyspeed</summary>
+;<remarks>todo</remarks>
 ::.skyspeed::
 pass=
 (
-User requests password reset for Navitaire Skyspeed.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request LMC
+;<summary>Password Reset Reuest LMC</summary>
+;<remarks>todo</remarks>
 ::.lmc::
 pass=
 (
-User requests password reset for Loyalty Management Console.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request Schoox
+;<summary>Password Reset Request Schoox</summary>
+;<remarks>todo</remarks>
 ::.schoox::
 pass=
 (
-User requests password reset for SchooX.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for SchooX. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request Vistair
+;<summary>Password Reset Request Vistair</summary>
+;<remarks>todo</remarks>
 ::.vistair::
 pass=
 (
-User requests password reset for Vistair.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Vistair. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
 ;@Password Reset Request Active Directory
+;<summary>Password Reset Request Active Directory</summary>
+;<remarks>todo</remarks>
 ::.ad::
 pass=
 (
-User requests password reset for ActiveDirectory.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
 ;@Password Reset Request Ultipro
+;<summary>Password Reset Request Active Ultipro</summary>
+;<remarks>todo</remarks>
 ::.ultipro::
 pass=
 (
-User requests password reset for Ultipro.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for Ultipro. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
 return
 
 
-;@Password Reset Request NetTracer
+;<summary>Password Reset Request NetTracer</summary>
+;<remarks>todo</remarks>
 ::.nettracer::
 pass=
 (
@@ -186,19 +182,18 @@ Verified Access.
 SendInput, %pass%
 return
 
-
-;@Flica Support
+;<summary>Directed to FLICA support.</summary>
+;<remarks>todo</remarks>
 ::.flica::
 flica=
 (
-User requests assistance accessing Flica.
-Informed user to contact Flica support at 1-800-659-9859.
+User requests assistance accessing Flica. Informed user to contact Flica support at 1-800-659-9859.
 )
 SendInput, %flica%
 return
 
-
-;@CrewTrac Support
+;<summary>CrewTrac Support</summary>
+;<remarks>todo</remarks>
 ::.crewtrac::
 crewtrac=
 (
@@ -208,8 +203,8 @@ Informed user to contact CrewTrac support at crewschedulingsupervisors@flyfronti
 SendInput, %crewtrac%
 return
 
-
-;@AvioBook/EFB
+;<summary>AvioBook/EFB</summary>
+;<remarks>todo</remarks>
 ::.efb::
 efb=
 (
@@ -219,8 +214,8 @@ Informed user to contact EFB at 720-295-7478.
 SendInput, %efb%
 return
 
-
-;@FlyTab
+;<summary>flytab support</summary>
+;<remarks>todo</remarks>
 ::.flytab::
 flytab=
 (
@@ -230,8 +225,8 @@ Informed user to contact Reatail In Motion support at 888-270-1510.
 SendInput, %flytab%
 return
 
-
-;@Trax
+;<summary>trax support</summary>
+;<remarks>todo</remarks>
 ::.trax::
 trax=
 (
@@ -242,8 +237,8 @@ SendInput, %trax%
 return
 
 
-
-;@Expire
+;<summary>Expired Account</summary>
+;<remarks>todo</remarks>
 ::.expired::
 expired=
 (
@@ -253,29 +248,29 @@ SendInput, %expired%
 return
 
 
-
-;@ID90
+;<summary>.id90</summary>
+;<remarks>todo</remarks>
 ::.id90::
 id90=
 (
-User requests assistance accessing ID90.
-Informed user to contact ID90 support at 877-298-5233.
+User requests assistance accessing ID90. Assisted user in recovering password via ID90Travel.com login page.
 )
 SendInput, %id90%
 return
 
 
-;@MyIDTravel.com
+;<summary>Password Reset Request myidtravel</summary>
+;<remarks>todo</remarks>
 ::.idtravel::
+idtravel=
 (
-User requests assistance with MyIDTravel beyond signing in.
-Informed user to contact MyIDTravel support at F9pass@flyfrontier.com for further assistance.
+User requests assistance with MyIDTravel beyond signing in. Verified user is using 6 digit employee id. Assisted user in recovering password via myidtravel.com login page. Walked user through setting up new password.
 )
 SendInput, %idtravel%
 return
 
-
-;@Authenticator
+;<summary>MS Authenticator assistance</summary>
+;<remarks>todo</remarks>
 ::.msauth::
 msAuthen=
 (
@@ -285,7 +280,8 @@ SendInput,%msAuthen%
 return
 
 
-;@VPN Connection
+;<summary>VPN Assistance</summary>
+;<remarks>todo</remarks>
 ::.vpn::
 vpn=
 (
@@ -295,8 +291,8 @@ SendInput, %vpn%
 return
 
 
-;@Name:NetworkShare Access
-;@hk
+;<summary>Network Share Access Reques</summary>
+;<remarks>todo</remarks>
 ::.share::
 share=
 (
@@ -307,8 +303,8 @@ Approved by [Leadership]
 SendInput, %share%
 return
 
-;@hr
-;@Email Template Generric
+;<summary>Bse Email Template</summary>
+;<remarks>todo</remarks>
 ::.eml::
 eml=
 (
@@ -322,6 +318,8 @@ return
 
 
 ;@Email Password Reply
+;<summary>Email Password Reset Request</summary>
+;<remarks>todo</remarks>
 ::.epass::
 epass= 
 (
@@ -337,6 +335,8 @@ SendInput, %epass%
 return
 
 ;@Email Authenticator
+;<summary>Todo</summary>
+;<remarks>todo</remarks>
 ::.eauthen::
 eauthen=
 (
@@ -352,6 +352,8 @@ return
 
 
 ;@Email More Info
+;<summary>Todo</summary>
+;<remarks>todo</remarks>
 ::.einfo::
 einfo=
 (
@@ -371,6 +373,8 @@ SendInput, %einfo%
 return
 
 ;@ProsafeT activation
+;<summary>Todo</summary>
+;<remarks>todo</remarks>
 ::.prosafet::
 code=
 (
@@ -382,6 +386,8 @@ SendInput, %code%
 return
 
 ;@Single Sign On
+;<summary>Single Sign On Assistance.</summary>
+;<remarks>todo</remarks>
 ::.sso::
 sso=
 (
@@ -392,6 +398,8 @@ SendInput, %sso%
 return
 
 ;@reactivation
+;<summary>Navataire Reactivation</summary>
+;<remarks>todo</remarks>
 ::.react::
 react=
 (
@@ -403,6 +411,8 @@ return
 
 
 ;@Password Requirements
+;<summary>Password Complexity Requirements</summary>
+;<remarks>todo</remarks>
 ::.passreq::
 (
 SendInput, Your new password is required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain your name or a password that has been used before.
@@ -410,10 +420,12 @@ SendInput, Your new password is required to be at-least 8 characters long, it mu
 return
 
 ;@Account Inactive
+;<summary>AD Account Inactive</summary>
+;<remarks>todo</remarks>
 ::.inact::
 pass=
 (
-User account inactive - reactivated.
+User AD account inactive - reactivated.
 )
 SendInput, %pass%
 return
