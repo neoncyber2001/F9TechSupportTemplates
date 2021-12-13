@@ -19,7 +19,7 @@ return
 
 ;;;;;;;;;;;;;;;;
 ;<summary>Outage Report</summary>
-;<remarks>todo</remarks>
+;<remarks>This data collection template must be filled out when a user reports an IT Outage.</remarks>
 ^Numpad5::
 mOutage=
 (
@@ -41,7 +41,7 @@ SendInput, %mOutage%
 return
 
 ;<summary>Stations Ticket</summary>
-;<remarks>todo</remarks>
+;<remarks>This Data Collection template contains all of the required information that the stations team requires for a ticket to be submitted to them.</remarks>
 ^Numpad1::
 mStations=
 (
@@ -56,7 +56,8 @@ Problem / Issue:
 SendInput, %mStations%
 return
 
-;@Top of ticket template.
+;<summary>Basic Ticket Template</summary>
+;<remarks>todo</remarks>
 ^Numpad0::
 mNameId=
 (
@@ -67,8 +68,8 @@ SendInput, %mNameId%
 return
 
 
-;<summary>Password Reset</summary>
-;<remarks>todo</remarks>
+;<summary>Password Reset (Generric)</summary>
+;<remarks>Generric Password Reset Template</remarks>
 ::.pass::
 pass=
 (
@@ -81,7 +82,7 @@ return
 
 
 ;<summary>Password Reset Request Navitaire</summary>
-;<remarks>todo</remarks>
+;<remarks>Password reset for the Navitaire System Apps</remarks>
 ::.navitaire::
 pass=
 (
@@ -92,7 +93,8 @@ return
 
 
 ;<summary>Password Reset Request GoNow</summary>
-;<remarks>todo</remarks>
+;<remarks>Same as above.</remarks>
+;<seealso>Navitaire</seealso>
 ::.gonow::
 pass=
 (
@@ -103,7 +105,8 @@ return
 
 
 ;<summary>Password Reset Reuest Skyspeed</summary>
-;<remarks>todo</remarks>
+;<remarks>Same as above.</remarks>
+;<seealso>Navitaire</seealso>
 ::.skyspeed::
 pass=
 (
@@ -114,7 +117,7 @@ return
 
 
 ;<summary>Password Reset Reuest LMC</summary>
-;<remarks>todo</remarks>
+;<remarks>Password Reset for the Loyalty Management Console. Seperate Navitaire From Gonow and Skyspeed.</remarks>
 ::.lmc::
 pass=
 (
@@ -125,7 +128,7 @@ return
 
 
 ;<summary>Password Reset Request Schoox</summary>
-;<remarks>todo</remarks>
+;<remarks>Password reset request for the Schoox Training System (often SSO).</remarks>
 ::.schoox::
 pass=
 (
@@ -136,7 +139,7 @@ return
 
 
 ;<summary>Password Reset Request Vistair</summary>
-;<remarks>todo</remarks>
+;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
 ::.vistair::
 pass=
 (
@@ -146,9 +149,8 @@ SendInput, %pass%
 return
 
 
-;@Password Reset Request Active Directory
 ;<summary>Password Reset Request Active Directory</summary>
-;<remarks>todo</remarks>
+;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
 ::.ad::
 pass=
 (
@@ -158,9 +160,8 @@ SendInput, %pass%
 return
 
 
-;@Password Reset Request Ultipro
 ;<summary>Password Reset Request Active Ultipro</summary>
-;<remarks>todo</remarks>
+;<remarks>Request a default password for Ultipro.</remarks>
 ::.ultipro::
 pass=
 (
@@ -171,13 +172,11 @@ return
 
 
 ;<summary>Password Reset Request NetTracer</summary>
-;<remarks>todo</remarks>
+;<remarks>NetTracer password reset request.</remarks>
 ::.nettracer::
 pass=
 (
-User requests password reset for NetTracer.
-Unlocked Account / Reset Password
-Verified Access.
+User requests password reset for NetTracer. Unlocked Account / Reset Password
 )
 SendInput, %pass%
 return
@@ -203,8 +202,8 @@ Informed user to contact CrewTrac support at crewschedulingsupervisors@flyfronti
 SendInput, %crewtrac%
 return
 
-;<summary>AvioBook/EFB</summary>
-;<remarks>todo</remarks>
+;<summary>AvioBook/EFB Install</summary>
+;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
 ::.efb::
 efb=
 (
@@ -317,7 +316,6 @@ SendInput, %eml%
 return
 
 
-;@Email Password Reply
 ;<summary>Email Password Reset Request</summary>
 ;<remarks>todo</remarks>
 ::.epass::
@@ -334,7 +332,6 @@ SendInput, %epass%
 
 return
 
-;@Email Authenticator
 ;<summary>Todo</summary>
 ;<remarks>todo</remarks>
 ::.eauthen::
@@ -351,7 +348,6 @@ SendInput, %eauthen%
 return
 
 
-;@Email More Info
 ;<summary>Todo</summary>
 ;<remarks>todo</remarks>
 ::.einfo::
@@ -372,7 +368,6 @@ Thanks for contacting the IT Support Help Desk, I’m happy to assist you with t
 SendInput, %einfo%
 return
 
-;@ProsafeT activation
 ;<summary>Todo</summary>
 ;<remarks>todo</remarks>
 ::.prosafet::
@@ -385,7 +380,6 @@ Verified activation.
 SendInput, %code%
 return
 
-;@Single Sign On
 ;<summary>Single Sign On Assistance.</summary>
 ;<remarks>todo</remarks>
 ::.sso::
@@ -397,7 +391,6 @@ Advised user access this service via the employee portal: MyFrontier.org
 SendInput, %sso%
 return
 
-;@reactivation
 ;<summary>Navataire Reactivation</summary>
 ;<remarks>todo</remarks>
 ::.react::
@@ -410,7 +403,6 @@ SendInput, %react%
 return
 
 
-;@Password Requirements
 ;<summary>Password Complexity Requirements</summary>
 ;<remarks>todo</remarks>
 ::.passreq::
@@ -419,7 +411,6 @@ SendInput, Your new password is required to be at-least 8 characters long, it mu
 )
 return
 
-;@Account Inactive
 ;<summary>AD Account Inactive</summary>
 ;<remarks>todo</remarks>
 ::.inact::
