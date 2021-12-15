@@ -1,0 +1,35 @@
+:link{
+    border-style: none;
+}
+
+:active{
+    border-style: none;
+}
+
+:visited{
+    border-style: none;
+}
+
+body{
+    background-color: black;
+}
+
+.Grid-Container{
+    background-color: white;
+    margin:25px;
+    display:grid;
+    grid-template-columns: 3;
+}
+
+.Grid-Item{
+    background-color: darkgreen;
+    margin: 5px;
+    position: relative;
+    width: 33%;
+}
+
+.thumb{
+    margin: 5px;
+    width: 250px;
+    height: 250px;
+}
