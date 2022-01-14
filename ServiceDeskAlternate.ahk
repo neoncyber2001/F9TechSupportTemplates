@@ -476,7 +476,7 @@ return
 ::.adobeup::
 update=
 (
-User reports that their Adobe [SOFTWARE NAME] is nonfunction, and requires a software update.
+User reports that their Adobe [SOFTWARE NAME] is nonfunctional, and requires a software update.
 
 Assisted user in updating the aforementioned software via Adobe Creative Cloud, the Adobe software hub.
 )
