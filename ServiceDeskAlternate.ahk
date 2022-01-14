@@ -348,12 +348,26 @@ return
 
 ;<summary>Network Share Access Reques</summary>
 ;<remarks>todo</remarks>
-::.share::
+::.netshare::
 share=
 (
+User is calling to report that they can not access a required network file share.
 User requests [Read/Read Write] Access to the following Network Share
 [\\Network-Share\Acccess]
 Approved by [Leadership]
+)
+SendInput, %share%
+return
+
+;<summary>Network Share Access Reques</summary>
+;<remarks>todo</remarks>
+::.install::
+share=
+(
+User is calling to request installation of software [AppNameHere].
+Is a licence required: [Yes/No]
+Approved by [Leadership]
+Request sent to [Agent] in [Department] for deployment.
 )
 SendInput, %share%
 return
@@ -441,8 +455,7 @@ return
 ::.sso::
 sso=
 (
-User's account in this service is Single Sign On.
-Advised user access this service via the employee portal: MyFrontier.org
+ User's account in this service is Single Sign On. Advised user how Single Sign on works and how to use it in this app.
 )
 SendInput, %sso%
 return
@@ -452,7 +465,7 @@ return
 ::.react::
 react=
 (
-Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
+Navataire Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
 )
 SendInput, %react%
 
@@ -463,7 +476,7 @@ return
 ;<remarks>todo</remarks>
 ::.passreq::
 (
-SendInput, Your new password is required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain your name or a password that has been used before.
+Advised new password required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain the user's name or a password that has been used before.
 )
 return
 
@@ -472,7 +485,7 @@ return
 ::.inact::
 pass=
 (
-User AD account inactive - reactivated.
+inactivity script had run on user's AD Account - reactivated, advised wait 30 min to login.
 )
 SendInput, %pass%
 return
