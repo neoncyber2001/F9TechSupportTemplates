@@ -23,6 +23,8 @@ return
 ^Numpad5::
 mOutage=
 (
+User called in to report an outage.
+
 Reporting Location: [Call Center / Department]
 By: [FirstNameLastName] - [EmployeeID]
 Contact: [Phone and/or Email]
@@ -45,13 +47,16 @@ return
 ^Numpad1::
 mStations=
 (
+User called in to request Stations Support
+Issue Summary:
+
 User ID:
 User Name: 
+Contact Phone:
 Airport:
 Station ID:
 IP / Network Drop:
-Contact Phone:
-Problem / Issue:
+Problem Details:
 )
 SendInput, %mStations%
 return
@@ -81,11 +86,13 @@ SendInput, %pass%
 return
 
 
+
 ;<summary>Password Reset Request Navitaire</summary>
 ;<remarks>Password reset for the Navitaire System Apps</remarks>
 ::.navitaire::
 pass=
 (
+Password Reset: Navitaire.
 User requests password reset for Navitaire. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -98,6 +105,7 @@ return
 ::.gonow::
 pass=
 (
+Password Reset:GoNow.
 User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -110,6 +118,7 @@ return
 ::.skyspeed::
 pass=
 (
+Password Reset: SkySpeed.
 User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -121,6 +130,7 @@ return
 ::.lmc::
 pass=
 (
+Password Reset: Loyalty Management Console.
 User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -132,6 +142,7 @@ return
 ::.schoox::
 pass=
 (
+Password Reset: Schoox.
 User requests password reset for SchooX. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -143,6 +154,7 @@ return
 ::.vistair::
 pass=
 (
+Password Reset: Vistair.
 User requests password reset for Vistair. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -154,6 +166,7 @@ return
 ::.ad::
 pass=
 (
+Password Reset: Active Directory, [Specific System].
 User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -165,6 +178,7 @@ return
 ::.ultipro::
 pass=
 (
+Password Reset: Ultipro.
 User requests password reset for Ultipro. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
@@ -176,6 +190,7 @@ return
 ::.nettracer::
 pass=
 (
+Password Reset: NetTracer.
 User requests password reset for NetTracer. Unlocked Account / Reset Password
 )
 SendInput, %pass%
@@ -186,6 +201,7 @@ return
 ::.flica::
 flica=
 (
+User attempting to access FLICA.
 User requests assistance accessing Flica. Informed user to contact Flica support at 1-800-659-9859.
 )
 SendInput, %flica%
@@ -196,7 +212,7 @@ return
 ::.crewtrac::
 crewtrac=
 (
-User requests assistance accessing CrewTrac.
+User requests assistance with CrewTrac Username and Password.
 Informed user to contact CrewTrac support at crewschedulingsupervisors@flyfrontier.com or 720-374-4540.
 )
 SendInput, %crewtrac%
@@ -207,8 +223,31 @@ return
 ::.efb::
 efb=
 (
-User requests assistance with AvioBook/EFB beyond logging in.
+User requests assistance with AvioBook/EFB.
 Informed user to contact EFB at 720-295-7478.
+)
+SendInput, %efb%
+return
+
+;<summary>AvioBook/EFB Install</summary>
+;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
+::.efbre::
+efb=
+(
+User requests assistance with AvioBook/EFB reinstall.
+Informed user to contact EFB at 720-295-7478.
+)
+SendInput, %efb%
+return
+
+
+;<summary>AvioBook/EFB Install</summary>
+;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
+::.efb::
+efb=
+(
+User requests assistance with AvioBook/EFB Password.
+Reset user's password in Active Directory, advised user that all AD passwords will be reset aswell.
 )
 SendInput, %efb%
 return
@@ -218,8 +257,8 @@ return
 ::.flytab::
 flytab=
 (
-User requests assistance with their FlyTab.
-Informed user to contact Reatail In Motion support at 888-270-1510.
+User requests assistance with their FlyTab, [SpecificIssue].
+Directed user to contact Reatail In Motion support at 888-270-1510.
 )
 SendInput, %flytab%
 return
@@ -252,7 +291,8 @@ return
 ::.id90::
 id90=
 (
-User requests assistance accessing ID90. Assisted user in recovering password via ID90Travel.com login page.
+User requests assistance accessing ID90, [SpecificIssue].
+Assisted user in recovering password via ID90Travel.com login page.
 )
 SendInput, %id90%
 return
@@ -263,7 +303,8 @@ return
 ::.idtravel::
 idtravel=
 (
-User requests assistance with MyIDTravel beyond signing in. Verified user is using 6 digit employee id. Assisted user in recovering password via myidtravel.com login page. Walked user through setting up new password.
+User requests assistance with MyIDTravel Login.
+Verified user is using 6 digit employee id. Assisted user in recovering password via myidtravel.com login page. Walked user through setting up new password.
 )
 SendInput, %idtravel%
 return
@@ -273,7 +314,8 @@ return
 ::.msauth::
 msAuthen=
 (
-User requesting assistance with MS Authenticator Setup / Access. Walked user through setup process.
+User requesting assistance with MS Authenticator Setup
+Walked user through process of setting up MS Authenticator account. Advised user that they must have there Authentication Device with them when logging into a Frontier system incase authentication is required.
 )
 SendInput,%msAuthen%
 return
@@ -281,10 +323,24 @@ return
 
 ;<summary>VPN Assistance</summary>
 ;<remarks>todo</remarks>
-::.vpn::
+::.vpnconnect::
 vpn=
 (
-User requests assistance connecting to VPN. Assisted user in connecting via Citrix.
+User requests assistance connecting to VPN.
+Assisted user in connecting secureid.myfrontier.org.
+)
+SendInput, %vpn%
+return
+
+;<summary>VPN Assistance</summary>
+;<remarks>todo</remarks>
+::.vpnissue::
+vpn=
+(
+User is calling to report a VPN issue.
+Specific Issue:
+Troubleshooting:
+Resolution: [Resolved / Escalated to]
 )
 SendInput, %vpn%
 return
