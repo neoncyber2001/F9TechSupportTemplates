@@ -468,8 +468,8 @@ react=
 Navitaire Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
 )
 SendInput, %react%
-
 return
+
 
 ;<summary>Adobe Acrobat Update</summary>
 ;<remarks>todo</remarks>
@@ -481,6 +481,7 @@ User reports that their Adobe [SOFTWARE NAME] is nonfunction, and requires a sof
 Assisted user in updating the aforementioned software via Adobe Creative Cloud, the Adobe software hub.
 )
 SendInput, %update%
+return
 
 
 ;<summary>Adobe Creative Cloud installation</summary>
@@ -495,7 +496,11 @@ Remoted into the user's device via [Dameware/Teams]. Navigated to https://helpx.
 Opened Registry Editor on the device, navigated to HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\InternetSettings, and Security_HKLM_Only key to 0 from 1.
 )
 SendInput, %install%
+return
 
+
+;<summary>Adobe Update Software bypass</summary>
+;<remarks>todo</remarks>
 ::.adobeerr::
 error=
 (
@@ -503,7 +508,8 @@ User reports that they are still receiving the Update message when they use thei
 
 Downloaded Zones.reg onto the agent's computer. Merged the .reg file via Registry Editor.
 )
-
+SendInput, %error%
+return
 
 ;<summary>Password Complexity Requirements</summary>
 ;<remarks>todo</remarks>
