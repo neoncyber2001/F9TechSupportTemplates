@@ -4,7 +4,7 @@
 
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
-;<remarks>todo</remarks>
+;<remarks>This will be removed in future versions of this script!</remarks>
 ^NumpadDot::
 	BlockInput, On
 	Sleep, 250
@@ -21,7 +21,8 @@ return
 ;<summary>Outage Report</summary>
 ;<remarks>This data collection template must be filled out when a user reports an IT Outage.</remarks>
 ^Numpad5::
-mOutage=
+    Sleep, 250
+	mOutage=
 (
 User called in to report an outage.
 
@@ -37,14 +38,17 @@ Contact: [Phone and/or Email]
 6. What is the public IP address of the agents seeing the issue? [PublicIP via https://www.whatismyip.com/]
 7. Please send screenshots of any error messages that you are receiving. [see attached]
 
-Sent Copy of Report to [Incident Mgr]
+Sent Copy of Report to [Incident Mgr].
 )
-SendInput, %mOutage%
+	BlockInput, On
+	SendInput, %mOutage%
+	BlockInput, Off
 return
 
 ;<summary>Stations Ticket</summary>
 ;<remarks>This Data Collection template contains all of the required information that the stations team requires for a ticket to be submitted to them.</remarks>
 ^Numpad1::
+    Sleep, 250
 mStations=
 (
 User called in to request Stations Support
@@ -58,7 +62,9 @@ Station ID:
 IP / Network Drop:
 Problem Details:
 )
+BlockInput, On
 SendInput, %mStations%
+BlockInput, Off
 return
 
 ;<summary>Basic Ticket Template</summary>
@@ -243,7 +249,7 @@ return
 
 ;<summary>AvioBook/EFB Install</summary>
 ;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
-::.efb::
+::.efbpass::
 efb=
 (
 User requests assistance with AvioBook/EFB Password.
@@ -475,9 +481,11 @@ return
 ;<summary>Password Complexity Requirements</summary>
 ;<remarks>todo</remarks>
 ::.passreq::
+pr=
 (
 Advised new password required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain the user's name or a password that has been used before.
 )
+SendInput, %pr%
 return
 
 ;<summary>AD Account Inactive</summary>
@@ -489,3 +497,4 @@ inactivity script had run on user's AD Account - reactivated, advised wait 30 mi
 )
 SendInput, %pass%
 return
+
