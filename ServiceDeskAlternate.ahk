@@ -4,7 +4,7 @@
 
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
-;<remarks>This will be removed in future versions of this script!</remarks>
+;<remarks>todo</remarks>
 ^NumpadDot::
 	BlockInput, On
 	Sleep, 250
@@ -21,8 +21,7 @@ return
 ;<summary>Outage Report</summary>
 ;<remarks>This data collection template must be filled out when a user reports an IT Outage.</remarks>
 ^Numpad5::
-    Sleep, 250
-	mOutage=
+mOutage=
 (
 User called in to report an outage.
 
@@ -38,17 +37,14 @@ Contact: [Phone and/or Email]
 6. What is the public IP address of the agents seeing the issue? [PublicIP via https://www.whatismyip.com/]
 7. Please send screenshots of any error messages that you are receiving. [see attached]
 
-Sent Copy of Report to [Incident Mgr].
+Sent Copy of Report to [Incident Mgr]
 )
-	BlockInput, On
-	SendInput, %mOutage%
-	BlockInput, Off
+SendInput, %mOutage%
 return
 
 ;<summary>Stations Ticket</summary>
 ;<remarks>This Data Collection template contains all of the required information that the stations team requires for a ticket to be submitted to them.</remarks>
 ^Numpad1::
-    Sleep, 250
 mStations=
 (
 User called in to request Stations Support
@@ -62,9 +58,7 @@ Station ID:
 IP / Network Drop:
 Problem Details:
 )
-BlockInput, On
 SendInput, %mStations%
-BlockInput, Off
 return
 
 ;<summary>Basic Ticket Template</summary>
@@ -226,7 +220,7 @@ return
 
 ;<summary>AvioBook/EFB Install</summary>
 ;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
-::.efb::
+::.efbins::
 efb=
 (
 User requests assistance with AvioBook/EFB.
@@ -249,7 +243,7 @@ return
 
 ;<summary>AvioBook/EFB Install</summary>
 ;<remarks>For assistance reinstalling Aviobook, passwords are set in Active Directory.</remarks>
-::.efbpass::
+::.efbpw::
 efb=
 (
 User requests assistance with AvioBook/EFB Password.
@@ -466,26 +460,63 @@ sso=
 SendInput, %sso%
 return
 
-;<summary>Navataire Reactivation</summary>
+;<summary>Navitaire Reactivation</summary>
 ;<remarks>todo</remarks>
 ::.react::
 react=
 (
-Navataire Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
+Navitaire Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
 )
 SendInput, %react%
-
 return
 
+
+;<summary>Adobe Acrobat Update</summary>
+;<remarks>todo</remarks>
+::.adobeup::
+update=
+(
+User reports that their Adobe [SOFTWARE NAME] is nonfunctional, and requires a software update.
+
+Assisted user in updating the aforementioned software via Adobe Creative Cloud, the Adobe software hub.
+)
+SendInput, %update%
+return
+
+
+;<summary>Adobe Creative Cloud installation</summary>
+;<remarks>todo</remarks>
+::.adobein::
+install=
+(
+User states that they cannot locate Adobe Creative Cloud - the application needs to be installed.
+
+Remoted into the user's device via [Dameware/Teams]. Navigated to https://helpx.adobe.com/download-install/kb/creative-cloud-desktop-app-download.html to initate the Creative Cloud installation.
+
+Opened Registry Editor on the device, navigated to HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\InternetSettings, and Security_HKLM_Only key to 0 from 1.
+)
+SendInput, %install%
+return
+
+
+;<summary>Adobe Update Software bypass</summary>
+;<remarks>todo</remarks>
+::.adobeerr::
+error=
+(
+User reports that they are still receiving the Update message when they use their Adobe software, even after the update via Creative Cloud.
+
+Downloaded Zones.reg onto the agent's computer. Merged the .reg file via Registry Editor.
+)
+SendInput, %error%
+return
 
 ;<summary>Password Complexity Requirements</summary>
 ;<remarks>todo</remarks>
 ::.passreq::
-pr=
 (
-Advised new password required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain the user's name or a password that has been used before.
+Advised agent that new password required to be at-least 8 characters long, it must include at-least one capitol letter, one lowercase letter, one number and one special character. It must not contain the user's name or a password that has been used before.
 )
-SendInput, %pr%
 return
 
 ;<summary>AD Account Inactive</summary>
@@ -497,4 +528,3 @@ inactivity script had run on user's AD Account - reactivated, advised wait 30 mi
 )
 SendInput, %pass%
 return
-
