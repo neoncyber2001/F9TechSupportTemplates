@@ -146,6 +146,10 @@ Password Reset: Schoox.
 User requests password reset for SchooX. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
+Sleep, 500
+Send, {Tab}{Tab}Schoox
+Sleep, 250
+Send, {Tab}{Enter}
 return
 
 
