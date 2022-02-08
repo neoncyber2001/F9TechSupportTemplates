@@ -2,6 +2,83 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** INIT AND UPDATE *** ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;initFilePath = %A_ScriptDir%\F9AHK.ini
+;initFile := FileOpen(%initFilePath%, "rw")
+;initData := initFile.Read()
+;initFile.Close()
+
+;;OI
+
+f9OngoingPath := "%A_ScriptDir%\F9AHK\F9Ongoing.ahk"
+ifNotExist, %f9OngoingPath%
+{
+	FormatTime, runDtTime, YYYYMMDDHH24MISS
+	OutputDebug, "Ongoing not found."
+	OutputDebug, %f9OngoingPath%
+	ongoingText =
+	(
+	;;ONGOING INCIDENT TEMPLATE
+
+
+	;;;;;;;;;;;;;;;;;;;;
+	;;This template will be used to create
+	;;uniform tickets for ongoing issues that
+	;;are expected to be resolved.
+	;;;;;;;;;;;;;;;;;;;;
+	)
+
+	FileAppend, %ongoingText%, %f9OngoingPath%
+;	IniWrite, %runDtTime%, %initData%, "Ongoing", "OG-Update"
+}
+
+;;;MI
+
+
+f9MajorPath := "%A_ScriptDir%\F9AHK\F9Major.ahk"
+ifNotExist, %f9MajorPath%
+{
+	FormatTime, runDtTime, YYYYMMDDHH24MISS
+	OutputDebug, "Major not found."
+	OutputDebug, %f9MajorPath%
+	miText =
+	(
+	;;MAJOR INCIDENT TEMPLATE
+
+	;;;;;;;;;;;;;;;;;;;;
+	;;This template will be used to create
+	;;uniform tickets for Major Incidents and
+	;;there resolutions.
+	;;;;;;;;;;;;;;;;;;;;
+	)
+
+	FileAppend, %miText%, %f9MajorPath%
+;	IniWrite, %runDtTime%, %initData%, "Major", "MI-Update"
+
+}
+
+IfExist, %initFilePath%
+{
+	FileDelete, %initFilePath%
+}
+;initFile = FileOpen(%initFilePath%, "rw")
+;initFile.Write(%initData%)
+;initFile.Close()
+;FileAppend, %initData%, %initFilePath%
+
+#include %A_ScriptDir%\F9AHK\
+#include F9Ongoing.ahk
+#include mi_templates.ahk
+
+;;;;;;;;;;;;;
+;; UPDATER ;;
+;;;;;;;;;;;;;
+
+
+
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
 ;<remarks>todo</remarks>
@@ -29,11 +106,11 @@ Reporting Location: [Call Center / Department]
 By: [FirstNameLastName] - [EmployeeID]
 Contact: [Phone and/or Email]
 
-1.What is down? [System Name]
-2.What are users unable to do? [eg: Refunds, Book Flights]
-3.What location(s) are impacted? [Physical Location]
-4.Does this cause any impact to any flights and what flights are impacted? [Estimated Imaact / Delays]
-5.If there are no flights impacted; does this issue have any financial impact? [Estimated Financial Impact]
+1. What is down? [System Name]
+2. What are users unable to do? [eg: Refunds, Book Flights]
+3. What location(s) are impacted? [Physical Location]
+4. Does this cause any impact to any flights and what flights are impacted? [Estimated Imaact / Delays]
+5. If there are no flights impacted; does this issue have any financial impact? [Estimated Financial Impact]
 6. What is the public IP address of the agents seeing the issue? [PublicIP via https://www.whatismyip.com/]
 7. Please send screenshots of any error messages that you are receiving. [see attached]
 
