@@ -2,6 +2,8 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
+;TODO: Refactor hotstrings into includeable files for easy mantainance.
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *** INIT AND UPDATE *** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -316,6 +318,19 @@ User requests password reset for ActiveDirectory. Unlocked Account / Reset Passw
 SendInput, %pass%
 return
 
+;<summary>Password Reset Request Active Directory</summary>
+;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
+::!ad::
+InputBox, specSys, AD Input, Which System is the user attempting to access?
+Sleep, 250
+BlockInput, On
+SendInput, Password Reset: Active Directory %specSys%.{Enter}User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
+Sleep, 500
+Send, {Tab}{Tab}ad
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, Off
+return
 
 ;<summary>Password Reset Request Active Ultipro</summary>
 ;<remarks>Request a default password for Ultipro.</remarks>
