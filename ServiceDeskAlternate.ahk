@@ -5,11 +5,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *** INIT AND UPDATE *** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;initFilePath = %A_ScriptDir%\F9AHK.ini
-;initFile := FileOpen(%initFilePath%, "rw")
-;initData := initFile.Read()
-;initFile.Close()
+initFileName := "F9AHK.ini"
+initFilePath = %A_ScriptDir%\%initFileName%
+initFile := FileOpen(initFilePath, "rw")
+initData := initFile.Read()
+initFile.Close()
 
 ;;OI
 
@@ -64,8 +64,8 @@ IfExist, %initFilePath%
 {
 	FileDelete, %initFilePath%
 }
-;initFile = FileOpen(%initFilePath%, "rw")
-;initFile.Write(%initData%)
+;initFile = FileOpen(initFilePath, "rw")
+;initFile.Write(initData)
 ;initFile.Close()
 ;FileAppend, %initData%, %initFilePath%
 
@@ -172,7 +172,10 @@ pass=
 Password Reset: Navitaire.
 User requests password reset for Navitaire. Unlocked Account / Reset Password.
 )
+Sleep, 250
+BlockInput, on
 SendInput, %pass%
+BlockInput, off
 return
 
 
@@ -188,6 +191,25 @@ User requests password reset for Navitaire GoNow. Unlocked Account / Reset Passw
 SendInput, %pass%
 return
 
+;<summary>Password Reset Request GoNow (aditional)</summary>
+;<remarks>Same as above.</remarks>
+;<seealso>Navitaire</seealso>
+::!gonow::
+pass=
+(
+Password Reset:GoNow.
+User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
+)
+Sleep, 250
+BlockInput, on
+SendInput, %pass%
+Sleep, 500
+Send, {Tab}{Tab}Navitaire
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
+return
+
 
 ;<summary>Password Reset Reuest Skyspeed</summary>
 ;<remarks>Same as above.</remarks>
@@ -199,6 +221,26 @@ Password Reset: SkySpeed.
 User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
 )
 SendInput, %pass%
+return
+
+
+;<summary>Password Reset Reuest Skyspeed (aditional)</summary>
+;<remarks>Same as above.</remarks>
+;<seealso>Navitaire</seealso>
+::!skyspeed::
+pass=
+(
+Password Reset: SkySpeed.
+User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
+)
+Sleep, 250
+BlockInput, On
+SendInput, %pass%
+Sleep, 500
+Send, {Tab}{Tab}Navitaire
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
 return
 
 
@@ -222,11 +264,14 @@ pass=
 Password Reset: Schoox.
 User requests password reset for SchooX. Unlocked Account / Reset Password.
 )
+Sleep, 250
+BlockInput, On
 SendInput, %pass%
 Sleep, 500
 Send, {Tab}{Tab}Schoox
 Sleep, 250
 Send, {Tab}{Enter}
+BlockInput, Off
 return
 
 
@@ -241,6 +286,24 @@ User requests password reset for Vistair. Unlocked Account / Reset Password.
 SendInput, %pass%
 return
 
+
+;<summary>Password Reset Request Vistair</summary>
+;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
+::!vistair::
+pass=
+(
+Password Reset: Vistair.
+User requests password reset for Vistair. Unlocked Account / Reset Password.
+)
+Sleep, 250
+BlockInput, On
+SendInput, %pass%
+Sleep, 500
+Send, {Tab}{Tab}Vistair
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, Off
+return
 
 ;<summary>Password Reset Request Active Directory</summary>
 ;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
