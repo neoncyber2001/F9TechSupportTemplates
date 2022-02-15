@@ -95,6 +95,12 @@ IfExist, %initFilePath%
 	BlockInput, Off
 return
 
+;;Issue Has Been Resolved.
+^Numpad3::
+Sleep, 250
+Send, Issue Has Been Resolved.
+Return
+
 
 ;;;;;;;;;;;;;;;;
 ;<summary>Outage Report</summary>
@@ -118,7 +124,7 @@ Contact: [Phone and/or Email]
 
 Sent Copy of Report to [Incident Mgr]
 )
-SendInput, %mOutage%
+Send, %mOutage%
 return
 
 ;<summary>Stations Ticket</summary>
@@ -137,7 +143,7 @@ Station ID:
 IP / Network Drop:
 Problem Details:
 )
-SendInput, %mStations%
+Send, %mStations%
 return
 
 ;<summary>Basic Ticket Template</summary>
@@ -148,7 +154,7 @@ mNameId=
 [EmployeeID]
 [FirstNameLastName]
 )
-SendInput, %mNameId%
+Send, %mNameId%
 return
 
 
@@ -161,7 +167,7 @@ User requests password reset for [System].
 Unlocked Account / Reset Password
 Verified Access.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 
@@ -176,7 +182,7 @@ User requests password reset for Navitaire. Unlocked Account / Reset Password.
 )
 Sleep, 250
 BlockInput, on
-SendInput, %pass%
+Send, %pass%
 BlockInput, off
 return
 
@@ -190,7 +196,7 @@ pass=
 Password Reset:GoNow.
 User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 ;<summary>Password Reset Request GoNow (aditional)</summary>
@@ -204,8 +210,8 @@ User requests password reset for Navitaire GoNow. Unlocked Account / Reset Passw
 )
 Sleep, 250
 BlockInput, on
-SendInput, %pass%
-Sleep, 500
+Send, %pass%
+Sleep, 1000
 Send, {Tab}{Tab}Navitaire
 Sleep, 250
 Send, {Tab}{Enter}
@@ -222,7 +228,7 @@ pass=
 Password Reset: SkySpeed.
 User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 
@@ -237,7 +243,7 @@ User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Pa
 )
 Sleep, 250
 BlockInput, On
-SendInput, %pass%
+Send, %pass%
 Sleep, 500
 Send, {Tab}{Tab}Navitaire
 Sleep, 250
@@ -254,7 +260,7 @@ pass=
 Password Reset: Loyalty Management Console.
 User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 
@@ -268,7 +274,7 @@ User requests password reset for SchooX. Unlocked Account / Reset Password.
 )
 Sleep, 250
 BlockInput, On
-SendInput, %pass%
+Send, %pass%
 Sleep, 500
 Send, {Tab}{Tab}Schoox
 Sleep, 250
@@ -285,7 +291,7 @@ pass=
 Password Reset: Vistair.
 User requests password reset for Vistair. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 
@@ -299,7 +305,7 @@ User requests password reset for Vistair. Unlocked Account / Reset Password.
 )
 Sleep, 250
 BlockInput, On
-SendInput, %pass%
+Send, %pass%
 Sleep, 500
 Send, {Tab}{Tab}Vistair
 Sleep, 250
@@ -315,7 +321,7 @@ pass=
 Password Reset: Active Directory, [Specific System].
 User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 ;<summary>Password Reset Request Active Directory</summary>
@@ -324,7 +330,7 @@ return
 InputBox, specSys, AD Input, Which System is the user attempting to access?
 Sleep, 250
 BlockInput, On
-SendInput, Password Reset: Active Directory %specSys%.{Enter}User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
+Send, Password Reset: Active Directory %specSys%.{Enter}User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
 Sleep, 500
 Send, {Tab}{Tab}ad
 Sleep, 250
@@ -340,7 +346,7 @@ pass=
 Password Reset: Ultipro.
 User requests password reset for Ultipro. Unlocked Account / Reset Password.
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 
@@ -352,7 +358,7 @@ pass=
 Password Reset: NetTracer.
 User requests password reset for NetTracer. Unlocked Account / Reset Password
 )
-SendInput, %pass%
+Send, %pass%
 return
 
 ;<summary>Directed to FLICA support.</summary>
@@ -363,7 +369,7 @@ flica=
 User attempting to access FLICA.
 User requests assistance accessing Flica. Informed user to contact Flica support at 1-800-659-9859.
 )
-SendInput, %flica%
+Send, %flica%
 return
 
 ;<summary>CrewTrac Support</summary>
@@ -374,7 +380,7 @@ crewtrac=
 User requests assistance with CrewTrac Username and Password.
 Informed user to contact CrewTrac support at crewschedulingsupervisors@flyfrontier.com or 720-374-4540.
 )
-SendInput, %crewtrac%
+Send, %crewtrac%
 return
 
 ;<summary>AvioBook/EFB Install</summary>
@@ -385,7 +391,7 @@ efb=
 User requests assistance with AvioBook/EFB.
 Informed user to contact EFB at 720-295-7478.
 )
-SendInput, %efb%
+Send, %efb%
 return
 
 ;<summary>AvioBook/EFB Install</summary>
@@ -396,7 +402,7 @@ efb=
 User requests assistance with AvioBook/EFB reinstall.
 Informed user to contact EFB at 720-295-7478.
 )
-SendInput, %efb%
+Send, %efb%
 return
 
 
@@ -408,7 +414,7 @@ efb=
 User requests assistance with AvioBook/EFB Password.
 Reset user's password in Active Directory, advised user that all AD passwords will be reset aswell.
 )
-SendInput, %efb%
+Send, %efb%
 return
 
 ;<summary>flytab support</summary>
@@ -419,7 +425,7 @@ flytab=
 User requests assistance with their FlyTab, [SpecificIssue].
 Directed user to contact Reatail In Motion support at 888-270-1510.
 )
-SendInput, %flytab%
+Send, %flytab%
 return
 
 ;<summary>trax support</summary>
@@ -430,7 +436,7 @@ trax=
 User requests password reset for Trax.
 Informed user to contact Trax support at TraxBusAdmin@flyfrontier.com.
 )
-SendInput, %trax%
+Send, %trax%
 return
 
 
@@ -441,7 +447,7 @@ expired=
 (
 Contractor AD account expired. Directed user to contact their frontier manager for reactivation in Contractor Portal.
 )
-SendInput, %expired%
+Send, %expired%
 return
 
 
@@ -453,7 +459,7 @@ id90=
 User requests assistance accessing ID90, [SpecificIssue].
 Assisted user in recovering password via ID90Travel.com login page.
 )
-SendInput, %id90%
+Send, %id90%
 return
 
 
@@ -465,7 +471,7 @@ idtravel=
 User requests assistance with MyIDTravel Login.
 Verified user is using 6 digit employee id. Assisted user in recovering password via myidtravel.com login page. Walked user through setting up new password.
 )
-SendInput, %idtravel%
+Send, %idtravel%
 return
 
 ;<summary>MS Authenticator assistance</summary>
@@ -476,7 +482,7 @@ msAuthen=
 User requesting assistance with MS Authenticator Setup
 Walked user through process of setting up MS Authenticator account. Advised user that they must have there Authentication Device with them when logging into a Frontier system incase authentication is required.
 )
-SendInput,%msAuthen%
+Send,%msAuthen%
 return
 
 
@@ -488,7 +494,7 @@ vpn=
 User requests assistance connecting to VPN.
 Assisted user in connecting secureid.myfrontier.org.
 )
-SendInput, %vpn%
+Send, %vpn%
 return
 
 ;<summary>VPN Assistance</summary>
@@ -501,7 +507,7 @@ Specific Issue:
 Troubleshooting:
 Resolution: [Resolved / Escalated to]
 )
-SendInput, %vpn%
+Send, %vpn%
 return
 
 
@@ -515,7 +521,7 @@ User requests [Read/Read Write] Access to the following Network Share
 [\\Network-Share\Acccess]
 Approved by [Leadership]
 )
-SendInput, %share%
+Send, %share%
 return
 
 ;<summary>Network Share Access Reques</summary>
@@ -528,7 +534,7 @@ Is a licence required: [Yes/No]
 Approved by [Leadership]
 Request sent to [Agent] in [Department] for deployment.
 )
-SendInput, %share%
+Send, %share%
 return
 
 ;<summary>Bse Email Template</summary>
@@ -541,7 +547,7 @@ return
 ; [body]
 ; Please let me know if you have any other questions.
 ;)
-;SendInput, %eml%
+;Send, %eml%
 ;return
 
 
@@ -557,7 +563,7 @@ return
 ;	[password]
 ; Please let me know if you have any other questions.
 ;)
-;SendInput, %epass%
+;Send, %epass%
 ;
 ;return
 
@@ -573,7 +579,7 @@ return
 ;- Once signed in, you may be presented with prompts for "More information required". If you do, please follow the onscreen instructions to complete the Authenticator setup. You will need to have a mobile phone that authenticator can send messages to, or  that you have installed the Authenticator Mobile App to.
 ;Please let me know if you have any other questions.
 ;)
-;SendInput, %eauthen%
+;Send, %eauthen%
 ;return
 
 
@@ -594,7 +600,7 @@ return
 ;-- The Employee ID Number / Sign in name and the First and Last Names of any of the other effected employees.
 ;)
 ;
-;SendInput, %einfo%
+;Send, %einfo%
 ;return
 
 ;<summary>Todo</summary>
@@ -606,7 +612,7 @@ User is requesting the activation code for ProSafeT.
 Provided activation code 4D25-BE28-93CA-8088.
 Verified activation.
 )
-SendInput, %code%
+Send, %code%
 return
 
 ;<summary>Single Sign On Assistance.</summary>
@@ -616,7 +622,7 @@ sso=
 (
  User's account in this service is Single Sign On. Advised user how Single Sign on works and how to use it in this app.
 )
-SendInput, %sso%
+Send, %sso%
 return
 
 ;<summary>Navitaire Reactivation</summary>
@@ -626,7 +632,7 @@ react=
 (
 Navitaire Account Disabled... Authorization for reactivation provided by [SupervisorName] - [SupervisorID].
 )
-SendInput, %react%
+Send, %react%
 return
 
 
@@ -639,7 +645,7 @@ User reports that their Adobe [SOFTWARE NAME] is nonfunctional, and requires a s
 
 Assisted user in updating the aforementioned software via Adobe Creative Cloud, the Adobe software hub.
 )
-SendInput, %update%
+Send, %update%
 return
 
 
@@ -654,7 +660,7 @@ Remoted into the user's device via [Dameware/Teams]. Navigated to https://helpx.
 
 Opened Registry Editor on the device, navigated to HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\InternetSettings, and Security_HKLM_Only key to 0 from 1.
 )
-SendInput, %install%
+Send, %install%
 return
 
 
@@ -667,7 +673,7 @@ User reports that they are still receiving the Update message when they use thei
 
 Downloaded Zones.reg onto the agent's computer. Merged the .reg file via Registry Editor.
 )
-SendInput, %error%
+Send, %error%
 return
 
 ;<summary>Password Complexity Requirements</summary>
@@ -685,5 +691,5 @@ pass=
 (
 inactivity script had run on user's AD Account - reactivated, advised wait 30 min to login.
 )
-SendInput, %pass%
+Send, %pass%
 return
