@@ -73,6 +73,7 @@ IfExist, %initFilePath%
 
 #include %A_ScriptDir%\F9AHK\
 #include F9Ongoing.ahk
+#include F9Offsite.ahk
 #include mi_templates.ahk
 
 ;;;;;;;;;;;;;
