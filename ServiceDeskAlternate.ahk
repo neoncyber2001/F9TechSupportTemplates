@@ -2,6 +2,8 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
+crlf = "`n"
+
 ;TODO: Refactor hotstrings into includeable files for easy mantainance.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -73,7 +75,6 @@ IfExist, %initFilePath%
 
 #include %A_ScriptDir%\F9AHK\
 #include F9Ongoing.ahk
-#include F9Offsite.ahk
 #include mi_templates.ahk
 
 ;;;;;;;;;;;;;
@@ -102,6 +103,38 @@ Sleep, 250
 Send, Issue Has Been Resolved.
 Return
 
+;^Numpad9::
+;ReportPath = "C:\tmp\report.txt"
+;promptSystem = "What application or system is down?"
+;promptUsers = "Does this affect one user or multiple users?"
+;promptActivity = "What are users unable to do?"
+;promptImpactStns = "Is one station impacted or is multiple station impacted?"
+;promptImpactFlights = "Does this cause any impact to any flights?"
+;promptFlightNumbers = "What flight(s) impacted?"
+;promptImpactFinance = "If there are no flights impacted; does this issue have any financial impact?"
+
+;InputBox, rptSystem, AD Input, %promptSystem%
+;InputBox, rptAffectedUsers, AD Input, %promptUsers%
+;InputBox, rptActivityStoped, AD Input, %promptActivity%
+;InputBox, rptImpactStns, AD Input, %promptImpactStns%
+;InputBox, rptImpactFlights, AD Input, %promptImpactFlights%
+;InputBox, rptFlightNumbers, AD Input, %promptFlightNumbers%
+;InputBox, rptImpactFinance, AD Input, %promptImpactFinance%
+;if FileExist(%ReportPath%){
+;	FileDelete, %ReportPath%
+;}
+;FileAppend, promptSystem . "	" . rptSystem . crlf , ReportPath
+;FileAppend, promptUsers . "	" . rptAffectedUsers . crlf , ReportPath
+;FileAppend, promptActivity . "	" . rptActivityStoped . crlf , ReportPath
+;FileAppend, promptImpactStns . "	" . rptImpactStns . crlf , ReportPath
+;FileAppend, promptImpactFlights . "	" . rptImpactFlight . crlf , ReportPath
+;FileAppend, promptFlightNumbers . "	" . rptFlightNumbers. crlf , ReportPath
+;FileAppend, promptImpactFinance . "	" . rptImpactFinance. crlf , ReportPath
+;Sleep, 250
+;Run, "notepad.exe " . ReportPath
+;return
+
+
 
 ;;;;;;;;;;;;;;;;
 ;<summary>Outage Report</summary>
@@ -109,21 +142,29 @@ Return
 ^Numpad5::
 mOutage=
 (
-User called in to report an outage.
+User is calling to report [Outage/Delay] at [Station].
+Caller Name:
+Caller Contact:
+Caller Station:
 
-Reporting Location: [Call Center / Department]
-By: [FirstNameLastName] - [EmployeeID]
-Contact: [Phone and/or Email]
+What application or system is down?
 
-1. What is down? [System Name]
-2. What are users unable to do? [eg: Refunds, Book Flights]
-3. What location(s) are impacted? [Physical Location]
-4. Does this cause any impact to any flights and what flights are impacted? [Estimated Imaact / Delays]
-5. If there are no flights impacted; does this issue have any financial impact? [Estimated Financial Impact]
-6. What is the public IP address of the agents seeing the issue? [PublicIP via https://www.whatismyip.com/]
-7. Please send screenshots of any error messages that you are receiving. [see attached]
+Does this affect one user or multiple users?
 
-Sent Copy of Report to [Incident Mgr]
+What are users unable to do?
+
+Is one station impacted or is multiple station impacted?
+
+Does this cause any impact to any flights?
+
+What flight(s) impacted? 
+(If there is a flight in a couple of days then this does not meet the requirement)
+
+If there are no flights impacted; does this issue have any financial impact?
+
+If there are no flights impacted and no financial impact, then this is not a major incident!!!!
+
+Sent Copy of Report to [Incident Management Cueue]
 )
 Send, %mOutage%
 return
