@@ -382,7 +382,7 @@ return
 
 ;<summary>Password Reset Request New Skies apps</summary>
 ;<remarks>Reset password for Navitaire, GoNow, SkySpeed, Levarti Max OPS - any of the New Skies apps.</remarks>
-::!newskies::
+::!ns::
 InputBox, specSys, New Skies Input, Which New Skies System is the user attempting to access?
 InputBox, specEnv, Environment Input, Which New Skies Environment is this system for?
 Sleep, 250
