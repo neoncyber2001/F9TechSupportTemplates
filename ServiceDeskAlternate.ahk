@@ -500,13 +500,20 @@ return
 
 ;<summary>trax support</summary>
 ;<remarks>todo</remarks>
-::.trax::
+::!trax::
 trax=
 (
 User requests password reset for Trax.
 Informed user to contact Trax support at TraxBusAdmin@flyfrontier.com.
 )
+Sleep, 250
+BlockInput, On
 Send, %trax%
+Sleep, 500
+Send, {Tab}{Tab}Trax
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
 return
 
 
