@@ -2,7 +2,6 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
-
 crlf = "`n"
 
 ;TODO: Refactor hotstrings into includeable files for easy mantainance.
@@ -214,97 +213,96 @@ Send, %pass%
 return
 
 
-
-;<summary>Password Reset Request Navitaire</summary>
-;<remarks>Password reset for the Navitaire System Apps</remarks>
-::.navitaire::
-pass=
-(
-Password Reset: Navitaire.
-User requests password reset for Navitaire. Unlocked Account / Reset Password.
-)
-Sleep, 250
-BlockInput, on
-Send, %pass%
-BlockInput, off
-return
-
-
-;<summary>Password Reset Request GoNow</summary>
-;<remarks>Same as above.</remarks>
-;<seealso>Navitaire</seealso>
-::.gonow::
-pass=
-(
-Password Reset:GoNow.
-User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
-)
-Send, %pass%
-return
-
-;<summary>Password Reset Request GoNow (aditional)</summary>
-;<remarks>Same as above.</remarks>
-;<seealso>Navitaire</seealso>
-::!gonow::
-pass=
-(
-Password Reset:GoNow.
-User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
-)
-Sleep, 250
-BlockInput, on
-Send, %pass%
-Sleep, 1000
-Send, {Tab}{Tab}Navitaire
-Sleep, 250
-Send, {Tab}{Enter}
-BlockInput, off
-return
+; ;<summary>Password Reset Request Navitaire</summary>
+; ;<remarks>Password reset for the Navitaire System Apps</remarks>
+; ::.navitaire::
+; pass=
+; (
+; Password Reset: Navitaire.
+; User requests password reset for Navitaire. Unlocked Account / Reset Password.
+; )
+; Sleep, 250
+; BlockInput, on
+; Send, %pass%
+; BlockInput, off
+; return
 
 
-;<summary>Password Reset Reuest Skyspeed</summary>
-;<remarks>Same as above.</remarks>
-;<seealso>Navitaire</seealso>
-::.skyspeed::
-pass=
-(
-Password Reset: SkySpeed.
-User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
-)
-Send, %pass%
-return
+; ;<summary>Password Reset Request GoNow</summary>
+; ;<remarks>Same as above.</remarks>
+; ;<seealso>Navitaire</seealso>
+; ::.gonow::
+; pass=
+; (
+; Password Reset:GoNow.
+; User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
+; )
+; Send, %pass%
+; return
+
+; ;<summary>Password Reset Request GoNow (aditional)</summary>
+; ;<remarks>Same as above.</remarks>
+; ;<seealso>Navitaire</seealso>
+; ::!gonow::
+; pass=
+; (
+; Password Reset:GoNow.
+; User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
+; )
+; Sleep, 250
+; BlockInput, on
+; Send, %pass%
+; Sleep, 1000
+; Send, {Tab}{Tab}Navitaire
+; Sleep, 250
+; Send, {Tab}{Enter}
+; BlockInput, off
+; return
 
 
-;<summary>Password Reset Reuest Skyspeed (aditional)</summary>
-;<remarks>Same as above.</remarks>
-;<seealso>Navitaire</seealso>
-::!skyspeed::
-pass=
-(
-Password Reset: SkySpeed.
-User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
-)
-Sleep, 250
-BlockInput, On
-Send, %pass%
-Sleep, 500
-Send, {Tab}{Tab}Navitaire
-Sleep, 250
-Send, {Tab}{Enter}
-BlockInput, off
-return
+; ;<summary>Password Reset Reuest Skyspeed</summary>
+; ;<remarks>Same as above.</remarks>
+; ;<seealso>Navitaire</seealso>
+; ::.skyspeed::
+; pass=
+; (
+; Password Reset: SkySpeed.
+; User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
+; )
+; Send, %pass%
+; return
 
 
-;<summary>Password Reset Reuest LMC</summary>
-;<remarks>Password Reset for the Loyalty Management Console. Seperate Navitaire From Gonow and Skyspeed.</remarks>
-::.lmc::
-pass=
-(
-Password Reset: Loyalty Management Console.
-User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
-)
-Send, %pass%
-return
+; ;<summary>Password Reset Reuest Skyspeed (aditional)</summary>
+; ;<remarks>Same as above.</remarks>
+; ;<seealso>Navitaire</seealso>
+; ::!skyspeed::
+; pass=
+; (
+; Password Reset: SkySpeed.
+; User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
+; )
+; Sleep, 250
+; BlockInput, On
+; Send, %pass%
+; Sleep, 500
+; Send, {Tab}{Tab}Navitaire
+; Sleep, 250
+; Send, {Tab}{Enter}
+; BlockInput, off
+; return
+
+
+; ;<summary>Password Reset Reuest LMC</summary>
+; ;<remarks>Password Reset for the Loyalty Management Console. Seperate Navitaire From Gonow and Skyspeed.</remarks>
+; ::.lmc::
+; pass=
+; (
+; Password Reset: Loyalty Management Console.
+; User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
+; )
+; Send, %pass%
+; return
 
 
 ;<summary>Password Reset Request Schoox</summary>
@@ -326,21 +324,21 @@ BlockInput, Off
 return
 
 
+; ;<summary>Password Reset Request Vistair</summary>
+; ;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
+; ::.vistair::
+; pass=
+; (
+; Password Reset: Vistair.
+; User requests password reset for Vistair. Unlocked Account / Reset Password.
+; )
+; Send, %pass%
+; return
+
+
 ;<summary>Password Reset Request Vistair</summary>
 ;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
 ::.vistair::
-pass=
-(
-Password Reset: Vistair.
-User requests password reset for Vistair. Unlocked Account / Reset Password.
-)
-Send, %pass%
-return
-
-
-;<summary>Password Reset Request Vistair</summary>
-;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
-::!vistair::
 pass=
 (
 Password Reset: Vistair.
@@ -356,16 +354,16 @@ Send, {Tab}{Enter}
 BlockInput, Off
 return
 
-;<summary>Password Reset Request Active Directory</summary>
-;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
-::.ad::
-pass=
-(
-Password Reset: Active Directory, [Specific System].
-User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
-)
-Send, %pass%
-return
+; ;<summary>Password Reset Request Active Directory</summary>
+; ;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
+; ::.ad::
+; pass=
+; (
+; Password Reset: Active Directory, [Specific System].
+; User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
+; )
+; Send, %pass%
+; return
 
 ;<summary>Password Reset Request Active Directory</summary>
 ;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
@@ -396,7 +394,7 @@ Send, {Tab}{Enter}
 BlockInput, Off
 return
 
-;<summary>Password Reset Request Ultipro</summary>
+;<summary>Password Reset Request Active Ultipro</summary>
 ;<remarks>Request a default password for Ultipro.</remarks>
 ::.ultipro::
 pass=
@@ -404,7 +402,14 @@ pass=
 Password Reset: Ultipro.
 User requests password reset for Ultipro. Unlocked Account / Reset Password.
 )
+Sleep, 250
+BlockInput, On
 Send, %pass%
+Sleep, 500
+Send, {Tab}{Tab}Ultipro
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
 return
 
 
@@ -416,7 +421,14 @@ pass=
 Password Reset: NetTracer.
 User requests password reset for NetTracer. Unlocked Account / Reset Password
 )
+Sleep, 250
+BlockInput, On
 Send, %pass%
+Sleep, 500
+Send, {Tab}{Tab}NetTracer
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
 return
 
 ;<summary>Directed to FLICA support.</summary>
