@@ -307,7 +307,7 @@ return
 
 ;<summary>Password Reset Request Schoox</summary>
 ;<remarks>Password reset request for the Schoox Training System (often SSO).</remarks>
-::.schoox::
+::!schoox::
 pass=
 (
 Password Reset: Schoox.
@@ -338,7 +338,7 @@ return
 
 ;<summary>Password Reset Request Vistair</summary>
 ;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
-::.vistair::
+::!vistair::
 pass=
 (
 Password Reset: Vistair.
@@ -396,7 +396,7 @@ return
 
 ;<summary>Password Reset Request Active Ultipro</summary>
 ;<remarks>Request a default password for Ultipro.</remarks>
-::.ultipro::
+::!ultipro::
 pass=
 (
 Password Reset: Ultipro.
@@ -415,7 +415,7 @@ return
 
 ;<summary>Password Reset Request NetTracer</summary>
 ;<remarks>NetTracer password reset request.</remarks>
-::.nettracer::
+::!nettracer::
 pass=
 (
 Password Reset: NetTracer.
