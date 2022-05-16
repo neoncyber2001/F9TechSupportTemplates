@@ -380,7 +380,22 @@ Send, {Tab}{Enter}
 BlockInput, Off
 return
 
-;<summary>Password Reset Request Active Ultipro</summary>
+;<summary>Password Reset Request New Skies apps</summary>
+;<remarks>Reset password for Navitaire, GoNow, SkySpeed, Levarti Max OPS - any of the New Skies apps.</remarks>
+::!newskies::
+InputBox, specSys, New Skies Input, Which New Skies System is the user attempting to access?
+InputBox, specEnv, Environment Input, Which New Skies Environment is this system for?
+Sleep, 250
+BlockInput, On
+Send, Password Reset: %specSys% %specEnv%.{Enter}User requests password reset for %specSys% %specEnv%. Unlocked Account / Reset Password.
+Sleep, 500
+Send, {Tab}{Tab}%specSys%
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, Off
+return
+
+;<summary>Password Reset Request Ultipro</summary>
 ;<remarks>Request a default password for Ultipro.</remarks>
 ::.ultipro::
 pass=
