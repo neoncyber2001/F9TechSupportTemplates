@@ -2,6 +2,7 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
+
 crlf = "`n"
 
 ;TODO: Refactor hotstrings into includeable files for easy mantainance.
@@ -384,7 +385,7 @@ return
 ;<remarks>Reset password for Navitaire, GoNow, SkySpeed, Levarti Max OPS - any of the New Skies apps.</remarks>
 ::!newskies::
 InputBox, specSys, New Skies Input, Which New Skies System is the user attempting to access?
-InputBox, specEnv, Environment Input, Which New Skies Environment is this system for?
+InputBox, specEnv, Environment Input, Which New Skies Environment is this system for?, , , , , , , , Production
 Sleep, 250
 BlockInput, On
 Send, Password Reset: %specSys% %specEnv%.{Enter}User requests password reset for %specSys% %specEnv%. Unlocked Account / Reset Password.
