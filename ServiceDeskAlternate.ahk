@@ -588,17 +588,54 @@ Send, %vpn%
 return
 
 
-;<summary>Network Share Access Reques</summary>
+
+;<summary>Network Share Access Request</summary>
 ;<remarks>todo</remarks>
-::.netshare::
+::!netshare::
 share=
 (
 User is calling to report that they can not access a required network file share.
 User requests [Read/Read Write] Access to the following Network Share
-[\\Network-Share\Acccess]
-Approved by [Leadership]
+[\\Network-Share\Access]
 )
+Sleep, 250
+BlockInput, On
 Send, %share%
+MsgBox, 4,, Has this been approved by the user's leadership? (press Yes or No)
+IfMsgBox, Yes
+	Send, {Enter}Approved by [Leadership]
+Else
+	Send, {Enter}Advised user contact their manager and submit a request.
+Sleep, 500
+Send, {Tab}{Tab}Shared Drive Access
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
+return
+
+
+;<summary>Network Share Access Request</summary>
+;<remarks>todo</remarks>
+::!citrixapp::
+app=
+(
+User is calling to request access to a software within Citrix.
+Software Name(s): [Software-Names]
+AD Group Name(s): [Group-Names].
+)
+Sleep, 250
+BlockInput, On
+Send, %app%
+MsgBox, 4,, Has this been approved by the user's leadership? (press Yes or No)
+IfMsgBox, Yes
+	Send, {Enter}Approved by [Leadership]
+Else
+	Send, {Enter}Advised user contact their manager and submit a request.
+Sleep, 500
+Send, {Tab}{Tab}Citrix Application Access
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, Off
 return
 
 ;<summary>Network Share Access Reques</summary>
