@@ -553,13 +553,42 @@ return
 
 ;<summary>MS Authenticator assistance</summary>
 ;<remarks>todo</remarks>
-::.msauth::
+::!msauth::
 msAuthen=
 (
 User requesting assistance with MS Authenticator Setup
 Walked user through process of setting up MS Authenticator account. Advised user that they must have there Authentication Device with them when logging into a Frontier system incase authentication is required.
 )
-Send,%msAuthen%
+Sleep, 250
+BlockInput, On
+Send, %msAuthen%
+Sleep, 500
+Send, {Tab}{Tab}Authenticator
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
+return
+
+
+;<summary>MS Authenticator Reset</summary>
+;<remarks>todo</remarks>
+::!mfareset::
+mfa=
+(
+User requests assistance with resetting their MS Authenticator, as they have acquired a new phone and phone number.
+Advising the agent to go to aka.ms/mfasetup will not work, as it will require the previous device/contact info to access the site.
+Escalating to Systems Engineering and requesting assistance with resetting the user's MFA.
+
+Contact: [PhoneNumber]
+)
+Sleep, 250
+BlockInput, On
+Send, %mfa%
+Sleep, 500
+Send, {Tab}{Tab}Authenticator
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, off
 return
 
 
@@ -650,6 +679,35 @@ Request sent to [Agent] in [Department] for deployment.
 )
 Send, %share%
 return
+
+
+;<summary>Network Share Access Request</summary>
+;<remarks>todo</remarks>
+::!install::
+app=
+(
+User is calling to request installation of software [AppNameHere].
+)
+Sleep, 250
+BlockInput, On
+Send, %app%
+MsgBox, 4,, Is a license required? (press Yes or No)
+IfMsgBox, Yes
+	Send, {Enter}A license IS required for this software.
+Else
+	Send, {Enter}A license is NOT required for this software.
+MsgBox, 4,, Has this been approved by the user's leadership? (press Yes or No)
+IfMsgBox, Yes
+	Send, {Enter}Approved by [Leadership]. Request escalated to [Department] for deployment.
+Else
+	Send, {Enter}Advised user that they contact their manager and submit a request.
+Sleep, 500
+Send, {Tab}{Tab}Software
+Sleep, 250
+Send, {Tab}{Enter}
+BlockInput, Off
+return
+
 
 ;<summary>Bse Email Template</summary>
 ;<remarks>todo</remarks>
