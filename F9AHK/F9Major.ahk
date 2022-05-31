@@ -6,13 +6,12 @@
 	;;there resolutions.
 	;;;;;;;;;;;;;;;;;;;;
 
-mimtkt=1116222
+
+
+
 
 ::.mim::
-mim=
-(
-User calling to report outage in Citrix and VPN - Advised that Major Insident Management has been notified - Ticket 1116222.  
-)
+mim = User calling to report outage in Citrix and VPN - Advised that Major Insident Management has been notified Ticket... %mim_ticket%
 Sleep, 250
 BlockInput, On
 Send, %mim%
@@ -24,10 +23,14 @@ BlockInput, off
 return
 
 ::#mim::
-Send, %mimtkt%
+Sleep, 250
+Send, %mim_ticket%
+Sleep, 250
 return
 
 ^Numpad7::
-Send, %mimtkt%
+Sleep, 250
+Send, %mim_ticket%
+Sleep, 250
 return
 
