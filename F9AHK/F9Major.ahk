@@ -9,7 +9,11 @@
 ::.mim::
 mim=
 (
+<<<<<<< HEAD
 User calling to report outage in Citrix and VPN - Advised that Major Insident Management has been notified - Ticket 1116322.  
+=======
+User calling to report outage in Citrix and VPN - Advised that Major Insident Managemenmt has been notified - Ticket 1116222.  
+>>>>>>> bc89cc1c139976ba9bc628dbe6f0d6ed46aa1538
 )
 Sleep, 250
 BlockInput, On
