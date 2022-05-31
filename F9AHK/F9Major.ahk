@@ -6,6 +6,8 @@
 	;;there resolutions.
 	;;;;;;;;;;;;;;;;;;;;
 
+mimtkt=1116222
+
 ::.mim::
 mim=
 (
@@ -22,5 +24,10 @@ BlockInput, off
 return
 
 ::#mim::
-Send, 1116222
+Send, %mimtkt%
 return
+
+^Numpad7::
+Send, %mimtkt%
+return
+
