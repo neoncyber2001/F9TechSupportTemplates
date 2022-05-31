@@ -20,3 +20,7 @@ Send, %mim%
 ;Send, {Tab}{Enter}
 BlockInput, off
 return
+
+::#mim::
+Send, 1116222
+return
