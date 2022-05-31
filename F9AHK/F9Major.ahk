@@ -13,7 +13,7 @@ User calling to report outage in Citrix.  Major Insident Managemenmt has been no
 )
 Sleep, 250
 BlockInput, On
-Send, %pasmims%
+Send, %mim%
 ;Sleep, 500
 ;Send, {Tab}{Tab}Citrix
 ;Sleep, 250
