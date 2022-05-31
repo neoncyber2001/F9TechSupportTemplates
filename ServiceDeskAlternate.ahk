@@ -76,6 +76,7 @@ IfExist, %initFilePath%
 #include %A_ScriptDir%\F9AHK\
 #include F9Ongoing.ahk
 #include mi_templates.ahk
+#include %A_ScriptDir%\F9AHK\F9Major.ahk
 
 ;;;;;;;;;;;;;
 ;; UPDATER ;;
