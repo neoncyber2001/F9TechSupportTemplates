@@ -212,99 +212,6 @@ Verified Access.
 Send, %pass%
 return
 
-
-; ;<summary>Password Reset Request Navitaire</summary>
-; ;<remarks>Password reset for the Navitaire System Apps</remarks>
-; ::.navitaire::
-; pass=
-; (
-; Password Reset: Navitaire.
-; User requests password reset for Navitaire. Unlocked Account / Reset Password.
-; )
-; Sleep, 250
-; BlockInput, on
-; Send, %pass%
-; BlockInput, off
-; return
-
-
-; ;<summary>Password Reset Request GoNow</summary>
-; ;<remarks>Same as above.</remarks>
-; ;<seealso>Navitaire</seealso>
-; ::.gonow::
-; pass=
-; (
-; Password Reset:GoNow.
-; User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
-; )
-; Send, %pass%
-; return
-
-; ;<summary>Password Reset Request GoNow (aditional)</summary>
-; ;<remarks>Same as above.</remarks>
-; ;<seealso>Navitaire</seealso>
-; ::!gonow::
-; pass=
-; (
-; Password Reset:GoNow.
-; User requests password reset for Navitaire GoNow. Unlocked Account / Reset Password.
-; )
-; Sleep, 250
-; BlockInput, on
-; Send, %pass%
-; Sleep, 1000
-; Send, {Tab}{Tab}Navitaire
-; Sleep, 250
-; Send, {Tab}{Enter}
-; BlockInput, off
-; return
-
-
-; ;<summary>Password Reset Reuest Skyspeed</summary>
-; ;<remarks>Same as above.</remarks>
-; ;<seealso>Navitaire</seealso>
-; ::.skyspeed::
-; pass=
-; (
-; Password Reset: SkySpeed.
-; User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
-; )
-; Send, %pass%
-; return
-
-
-; ;<summary>Password Reset Reuest Skyspeed (aditional)</summary>
-; ;<remarks>Same as above.</remarks>
-; ;<seealso>Navitaire</seealso>
-; ::!skyspeed::
-; pass=
-; (
-; Password Reset: SkySpeed.
-; User requests password reset for Navitaire Skyspeed. Unlocked Account / Reset Password.
-; )
-; Sleep, 250
-; BlockInput, On
-; Send, %pass%
-; Sleep, 500
-; Send, {Tab}{Tab}Navitaire
-; Sleep, 250
-; Send, {Tab}{Enter}
-; BlockInput, off
-; return
-
-
-; ;<summary>Password Reset Reuest LMC</summary>
-; ;<remarks>Password Reset for the Loyalty Management Console. Seperate Navitaire From Gonow and Skyspeed.</remarks>
-; ::.lmc::
-; pass=
-; (
-; Password Reset: Loyalty Management Console.
-; User requests password reset for Loyalty Management Console. Unlocked Account / Reset Password.
-; )
-; Send, %pass%
-; return
-
-
 ;<summary>Password Reset Request Schoox</summary>
 ;<remarks>Password reset request for the Schoox Training System (often SSO).</remarks>
 ::!schoox::
@@ -324,18 +231,6 @@ BlockInput, Off
 return
 
 
-; ;<summary>Password Reset Request Vistair</summary>
-; ;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
-; ::.vistair::
-; pass=
-; (
-; Password Reset: Vistair.
-; User requests password reset for Vistair. Unlocked Account / Reset Password.
-; )
-; Send, %pass%
-; return
-
-
 ;<summary>Password Reset Request Vistair</summary>
 ;<remarks>Password reset request for Vistair/Docunet (often SSO).</remarks>
 ::!vistair::
@@ -353,17 +248,6 @@ Sleep, 250
 Send, {Tab}{Enter}
 BlockInput, Off
 return
-
-; ;<summary>Password Reset Request Active Directory</summary>
-; ;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
-; ::.ad::
-; pass=
-; (
-; Password Reset: Active Directory, [Specific System].
-; User requests password reset for ActiveDirectory. Unlocked Account / Reset Password.
-; )
-; Send, %pass%
-; return
 
 ;<summary>Password Reset Request Active Directory</summary>
 ;<remarks>Reset passwrod reset for Windows, SSO, Active Directory, MSOffice, Myfrontier.org ect...</remarks>
@@ -553,42 +437,13 @@ return
 
 ;<summary>MS Authenticator assistance</summary>
 ;<remarks>todo</remarks>
-::!msauth::
+::.msauth::
 msAuthen=
 (
 User requesting assistance with MS Authenticator Setup
 Walked user through process of setting up MS Authenticator account. Advised user that they must have there Authentication Device with them when logging into a Frontier system incase authentication is required.
 )
-Sleep, 250
-BlockInput, On
-Send, %msAuthen%
-Sleep, 500
-Send, {Tab}{Tab}Authenticator
-Sleep, 250
-Send, {Tab}{Enter}
-BlockInput, off
-return
-
-
-;<summary>MS Authenticator Reset</summary>
-;<remarks>todo</remarks>
-::!mfareset::
-mfa=
-(
-User requests assistance with resetting their MS Authenticator, as they have acquired a new phone and phone number.
-Advising the agent to go to aka.ms/mfasetup will not work, as it will require the previous device/contact info to access the site.
-Escalating to Systems Engineering and requesting assistance with resetting the user's MFA.
-
-Contact: [PhoneNumber]
-)
-Sleep, 250
-BlockInput, On
-Send, %mfa%
-Sleep, 500
-Send, {Tab}{Tab}Authenticator
-Sleep, 250
-Send, {Tab}{Enter}
-BlockInput, off
+Send,%msAuthen%
 return
 
 
@@ -679,101 +534,6 @@ Request sent to [Agent] in [Department] for deployment.
 )
 Send, %share%
 return
-
-
-;<summary>Network Share Access Request</summary>
-;<remarks>todo</remarks>
-::!install::
-app=
-(
-User is calling to request installation of software [AppNameHere].
-)
-Sleep, 250
-BlockInput, On
-Send, %app%
-MsgBox, 4,, Is a license required? (press Yes or No)
-IfMsgBox, Yes
-	Send, {Enter}A license IS required for this software.
-Else
-	Send, {Enter}A license is NOT required for this software.
-MsgBox, 4,, Has this been approved by the user's leadership? (press Yes or No)
-IfMsgBox, Yes
-	Send, {Enter}Approved by [Leadership]. Request escalated to [Department] for deployment.
-Else
-	Send, {Enter}Advised user that they contact their manager and submit a request.
-Sleep, 500
-Send, {Tab}{Tab}Software
-Sleep, 250
-Send, {Tab}{Enter}
-BlockInput, Off
-return
-
-
-;<summary>Bse Email Template</summary>
-;<remarks>todo</remarks>
-;::.eml::
-;eml=
-;(
-;Hello [...]
-; Thanks for contacting the IT helpdesk. I will happy to assist you with your [issue] today.
-; [body]
-; Please let me know if you have any other questions.
-;)
-;Send, %eml%
-;return
-
-
-;<summary>Email Password Reset Request</summary>
-;<remarks>todo</remarks>
-;::.epass::
-;epass= 
-;(
-;Hello [...]
-; Thanks for contacting the IT helpdesk. I will happy to assist you with your Password Reset today.
-; I've unlocked the account and reset the password. Your user name and temporary password for [system] will be:
-;	[username]
-;	[password]
-; Please let me know if you have any other questions.
-;)
-;Send, %epass%
-;
-;return
-
-;<summary>Todo</summary>
-;<remarks>todo</remarks>
-;::.eauthen::
-;eauthen=
-;(
-;Hello [...]
-;- Thanks for contacting the IT helpdesk. I will happy to assist you with your MS Authenticator today. First we need to be sure that your entering the correct information into the correct screen.
-;- The Microsoft Authenticator Sign in page is branded for Frontier Airlines and can be identified by a photo of a Jet Engine in the background. For this system you user name will be your FlyFrontier.com Email address or your Windows Sign-in name with @flyfrontier.com attached to the end.
-;- The password will be the same password that you use to log on to Windows on the Frontier Airlines Network and the same password you use to log onto MyFrontier.org. All of these passwords are synchronized so if you change one, all of the others change as well.
-;- Once signed in, you may be presented with prompts for "More information required". If you do, please follow the onscreen instructions to complete the Authenticator setup. You will need to have a mobile phone that authenticator can send messages to, or  that you have installed the Authenticator Mobile App to.
-;Please let me know if you have any other questions.
-;)
-;Send, %eauthen%
-;return
-
-
-;<summary>Todo</summary>
-;<remarks>todo</remarks>
-;::.einfo::
-;einfo=
-;(
-;Hello [...],
-;Thanks for contacting the IT Support Help Desk, I’m happy to assist you with this issue. In order to do so I’m going to need to collect some more information. 
-;-- Your Employee ID Number / Sign in name
-;-- What is the name of the system that you are trying to access?
-;-- Where are you physically located?
-;-- Are you using a Frontier Airlines Laptop or Workstation, or are you using personal equipment?
-;---- If on Frontier equipment – What is the Computer Name (located on a label near the lower right hand corner of the monitor) or IP Address (located on the desktop background)?
-;-- Are you Connected to a Frontier Airlines Network or is it a personal ISP?
-;-- Are other employees effected?
-;-- The Employee ID Number / Sign in name and the First and Last Names of any of the other effected employees.
-;)
-;
-;Send, %einfo%
-;return
 
 ;<summary>Todo</summary>
 ;<remarks>todo</remarks>
