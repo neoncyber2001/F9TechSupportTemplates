@@ -2,9 +2,9 @@
 ;<pre>Frontier IT Service Desk AHK Template Script v0.0.0.5d Tested on Version AutoHotkey 1.1.33.10. Use CTRL+SHIFT+? for help.</pre>
 
 
-
 crlf = "`n"
 mim_ticket := "1116222"
+
 ;TODO: Refactor hotstrings into includeable files for easy mantainance.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -44,27 +44,35 @@ ifNotExist, %f9OngoingPath%
 
 
 f9MajorPath := "%A_ScriptDir%\F9AHK\F9Major.ahk"
-ifNotExist, %f9MajorPath%
-{
-	FormatTime, runDtTime, YYYYMMDDHH24MISS
-	OutputDebug, "Major not found."
-	OutputDebug, %f9MajorPath%
-	miText =
-	(
-	;;MAJOR INCIDENT TEMPLATE
+updateUrl := "https://overload.media:8888/mi/F9Major.ahk"
+OutputDebug, Downloading File...
+UrlDownloadToFile, %updateUrl%, %f9MajorPathj%
 
-	;;;;;;;;;;;;;;;;;;;;
-	;;This template will be used to create
-	;;uniform tickets for Major Incidents and
-	;;there resolutions.
-	;;;;;;;;;;;;;;;;;;;;
-	)
+if ErrorLevel{
+	OutputDebug, Error downloading updated file.
+	checkFile(){
+		ifNotExist, %f9MajorPath%
+		{
+			FormatTime, runDtTime, YYYYMMDDHH24MISS
+			OutputDebug, "Major not found."
+			OutputDebug, %f9MajorPath%
+			miText =
+			(
+			;;MAJOR INCIDENT TEMPLATE
 
-	FileAppend, %miText%, %f9MajorPath%
-;	IniWrite, %runDtTime%, %initData%, "Major", "MI-Update"
+			;;;;;;;;;;;;;;;;;;;;
+			;;This template will be used to create
+			;;uniform tickets for Major Incidents and
+			;;there resolutions.
+			;;;;;;;;;;;;;;;;;;;;
+			)
 
+			FileAppend, %miText%, %f9MajorPath%
+		;	IniWrite, %runDtTime%, %initData%, "Major", "MI-Update"
+
+		}
+	}
 }
-
 IfExist, %initFilePath%
 {
 	FileDelete, %initFilePath%
