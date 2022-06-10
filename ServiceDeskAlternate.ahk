@@ -4,96 +4,53 @@
 
 crlf = "`n"
 mim_ticket := "1116222"
-
-;TODO: Refactor hotstrings into includeable files for easy mantainance.
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; *** INIT AND UPDATE *** ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-initFileName := "F9AHK.ini"
-initFilePath = %A_ScriptDir%\%initFileName%
-initFile := FileOpen(initFilePath, "rw")
-initData := initFile.Read()
-initFile.Close()
-
-;;OI
-
-f9OngoingPath := "%A_ScriptDir%\F9AHK\F9Ongoing.ahk"
-ifNotExist, %f9OngoingPath%
-{
-	FormatTime, runDtTime, YYYYMMDDHH24MISS
-	OutputDebug, "Ongoing not found."
-	OutputDebug, %f9OngoingPath%
-	ongoingText =
-	(
-	;;ONGOING INCIDENT TEMPLATE
-
-
-	;;;;;;;;;;;;;;;;;;;;
-	;;This template will be used to create
-	;;uniform tickets for ongoing issues that
-	;;are expected to be resolved.
-	;;;;;;;;;;;;;;;;;;;;
-	)
-
-	FileAppend, %ongoingText%, %f9OngoingPath%
-;	IniWrite, %runDtTime%, %initData%, "Ongoing", "OG-Update"
-}
-
-;;;MI
-
-
+f9TemplatesPath := "%A_ScriptDir%\F9AHK\F9Templates.ahk"
 f9MajorPath := "%A_ScriptDir%\F9AHK\F9Major.ahk"
 updateUrl := "https://overload.media:8888/mi/F9Major.ahk"
-OutputDebug, Downloading File...
-UrlDownloadToFile, %updateUrl%, %f9MajorPathj%
 
-if ErrorLevel{
-	OutputDebug, Error downloading updated file.
-	checkFile(){
-		ifNotExist, %f9MajorPath%
-		{
-			FormatTime, runDtTime, YYYYMMDDHH24MISS
-			OutputDebug, "Major not found."
-			OutputDebug, %f9MajorPath%
-			miText =
-			(
-			;;MAJOR INCIDENT TEMPLATE
+;;;;;;;;;;;;;
+;; UPDATER ;;
+;;;;;;;;;;;;;
 
-			;;;;;;;;;;;;;;;;;;;;
-			;;This template will be used to create
-			;;uniform tickets for Major Incidents and
-			;;there resolutions.
-			;;;;;;;;;;;;;;;;;;;;
-			)
+checkFile(){
+	ifNotExist, %f9MajorPath%
+	{
+		miText =
+		(
+		;;MAJOR INCIDENT TEMPLATE
 
-			FileAppend, %miText%, %f9MajorPath%
-		;	IniWrite, %runDtTime%, %initData%, "Major", "MI-Update"
-
+		miCheck(){
+			Return
 		}
+		;;;;;;;;;;;;;;;;;;;;
+		;;This template will be used to create
+		;;uniform tickets for Major Incidents and
+		;;there resolutions.
+		;;;;;;;;;;;;;;;;;;;;
+		)
+		FileAppend, %miText%, %f9MajorPath%
 	}
+
+	Return
 }
-IfExist, %initFilePath%
-{
-	FileDelete, %initFilePath%
-}
+
+;IfExist, %initFilePath%
+;{
+;	FileDelete, %initFilePath%
+;}
 ;initFile = FileOpen(initFilePath, "rw")
 ;initFile.Write(initData)
 ;initFile.Close()
 ;FileAppend, %initData%, %initFilePath%
 
 #include %A_ScriptDir%\F9AHK\
-#include F9Ongoing.ahk
-#include mi_templates.ahk
-#include %A_ScriptDir%\F9AHK\F9Major.ahk
-#include %A_ScriptDir%\F9Functions.ahk
-
-;;;;;;;;;;;;;
-;; UPDATER ;;
-;;;;;;;;;;;;;
+;#include %A_ScriptDir%\F9AHK\F9Major.ahk
+#include %A_ScriptDir%\F9AHK\F9Templates.ahk
+#include %A_ScriptDir%\F9AHK\F9Functions.ahk
 
 
 
+;miCheck()
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
 ;<remarks>todo</remarks>
@@ -105,6 +62,16 @@ return
 ^Numpad3::
 	issueResolved()
 Return
+
+;Major Incidents
+;::!mim::
+;	insertMIM()
+;Return
+
+;::#mim::
+;	insertMITicket()
+;Return
+
 
 ;^Numpad9::
 ;ReportPath = "C:\tmp\report.txt"

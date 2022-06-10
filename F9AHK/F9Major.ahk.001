@@ -7,18 +7,17 @@
 	;;;;;;;;;;;;;;;;;;;;
 
 miCheck(){
-	MsgBox, No Currently Active Major Incidents.
 	Return
 }
 
 ::.mim::
-miOut=
+mim=
 (
 Nope - Ticket 00000.  
 )
 Sleep, 250
 BlockInput, On
-Send, %miOut%
+Send, %mim%
 BlockInput, off
 Return
 
