@@ -11,18 +11,20 @@ miCheck(){
 	Return
 }
 
-::.mim::
-miOut=
-(
-Nope - Ticket 00000.  
-)
-Sleep, 250
-BlockInput, On
-Send, %miOut%
-BlockInput, off
-Return
+insertMIM(){
+	miOut=
+	(
+	Nope - Ticket 00000.  
+	)
+	Sleep, 250
+	BlockInput, On
+	Send, %miOut%
+	BlockInput, off
+	Return
+}
 
-::#mim::
-Sleep, 250
-Send, 00000
-Return:
+insertMITicket(){
+	Sleep, 250
+	Send, 00000
+	Return
+}

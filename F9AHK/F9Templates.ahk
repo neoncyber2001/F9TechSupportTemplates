@@ -27,7 +27,7 @@ outageReport()
     Sent Copy of Report to [Incident Management Cueue]
     )
     Send, %mOutage%
-    return
+    Return
 }
 
 stationsRequest()
@@ -46,5 +46,5 @@ stationsRequest()
     Problem Details:
     )
     Send, %mStations%
-    return
+    Return
 }

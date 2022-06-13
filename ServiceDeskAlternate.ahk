@@ -34,17 +34,10 @@ checkFile(){
 	Return
 }
 
-;IfExist, %initFilePath%
-;{
-;	FileDelete, %initFilePath%
-;}
-;initFile = FileOpen(initFilePath, "rw")
-;initFile.Write(initData)
-;initFile.Close()
-;FileAppend, %initData%, %initFilePath%
 
+checkFile()
 #include %A_ScriptDir%\F9AHK\
-;#include %A_ScriptDir%\F9AHK\F9Major.ahk
+#include %A_ScriptDir%\F9AHK\F9Major.ahk
 #include %A_ScriptDir%\F9AHK\F9Templates.ahk
 #include %A_ScriptDir%\F9AHK\F9Functions.ahk
 
@@ -64,45 +57,13 @@ return
 Return
 
 ;Major Incidents
-;::!mim::
-;	insertMIM()
-;Return
+::!mim::
+	insertMIM()
+Return
 
-;::#mim::
-;	insertMITicket()
-;Return
-
-
-;^Numpad9::
-;ReportPath = "C:\tmp\report.txt"
-;promptSystem = "What application or system is down?"
-;promptUsers = "Does this affect one user or multiple users?"
-;promptActivity = "What are users unable to do?"
-;promptImpactStns = "Is one station impacted or is multiple station impacted?"
-;promptImpactFlights = "Does this cause any impact to any flights?"
-;promptFlightNumbers = "What flight(s) impacted?"
-;promptImpactFinance = "If there are no flights impacted; does this issue have any financial impact?"
-
-;InputBox, rptSystem, AD Input, %promptSystem%
-;InputBox, rptAffectedUsers, AD Input, %promptUsers%
-;InputBox, rptActivityStoped, AD Input, %promptActivity%
-;InputBox, rptImpactStns, AD Input, %promptImpactStns%
-;InputBox, rptImpactFlights, AD Input, %promptImpactFlights%
-;InputBox, rptFlightNumbers, AD Input, %promptFlightNumbers%
-;InputBox, rptImpactFinance, AD Input, %promptImpactFinance%
-;if FileExist(%ReportPath%){
-;	FileDelete, %ReportPath%
-;}
-;FileAppend, promptSystem . "	" . rptSystem . crlf , ReportPath
-;FileAppend, promptUsers . "	" . rptAffectedUsers . crlf , ReportPath
-;FileAppend, promptActivity . "	" . rptActivityStoped . crlf , ReportPath
-;FileAppend, promptImpactStns . "	" . rptImpactStns . crlf , ReportPath
-;FileAppend, promptImpactFlights . "	" . rptImpactFlight . crlf , ReportPath
-;FileAppend, promptFlightNumbers . "	" . rptFlightNumbers. crlf , ReportPath
-;FileAppend, promptImpactFinance . "	" . rptImpactFinance. crlf , ReportPath
-;Sleep, 250
-;Run, "notepad.exe " . ReportPath
-;return
+::#mim::
+	insertMITicket()
+Return
 
 
 
