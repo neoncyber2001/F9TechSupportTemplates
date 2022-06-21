@@ -42,57 +42,24 @@ checkFile()
 #include %A_ScriptDir%\F9AHK\F9Functions.ahk
 
 
-;<summary>Basic Ticket Template</summary>
-;<remarks>todo</remarks>
-^+0::
-mNameId=
-(
-[EmployeeID]
-[FirstNameLastName]
-)
-Send, %mNameId%
-return
-
-
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
 ;<remarks>todo</remarks>
 ^+1::
-	BlockInput, On
-	Sleep, 250
-	Send, Default Customer{Tab}
-	Sleep, 1000
-	Send, {Enter}
-	Sleep, 1000
-	Send, {Enter}
-	BlockInput, Off
+defaultCustomer()
 return
 
 
 ;;Issue Has Been Resolved.
 ^+2::
-Sleep, 250
-Send, Issue Has Been Resolved.
+issueResolved()
 Return
 
 
 ;<summary>Stations Ticket</summary>
 ;<remarks>This Data Collection template contains all of the required information that the stations team requires for a ticket to be submitted to them.</remarks>
 ^+3::
-mStations=
-(
-User called in to request Stations Support
-Issue Summary:
-
-User ID:
-User Name: 
-Contact Phone:
-Airport:
-Station ID:
-IP / Network Drop:
-Problem Details:
-)
-Send, %mStations%
+stationsRequest()
 return
 
 
@@ -100,69 +67,9 @@ return
 ;<summary>Outage Report</summary>
 ;<remarks>This data collection template must be filled out when a user reports an IT Outage.</remarks>
 ^+5::
-mOutage=
-(
-User is calling to report [Outage/Delay] at [Station].
-Caller Name:
-Caller Contact:
-Caller Station:
-
-What application or system is down?
-
-Does this affect one user or multiple users?
-
-What are users unable to do?
-
-Is one station impacted or is multiple station impacted?
-
-Does this cause any impact to any flights?
-
-What flight(s) impacted? 
-(If there is a flight in a couple of days then this does not meet the requirement)
-
-If there are no flights impacted; does this issue have any financial impact?
-
-If there are no flights impacted and no financial impact, then this is not a major incident!!!!
-
-Sent Copy of Report to [Incident Management Cueue]
-)
-Send, %mOutage%
+outageReport()
 return
 
-;^+9::
-;ReportPath = "C:\tmp\report.txt"
-;promptSystem = "What application or system is down?"
-;promptUsers = "Does this affect one user or multiple users?"
-;promptActivity = "What are users unable to do?"
-;promptImpactStns = "Is one station impacted or is multiple station impacted?"
-;promptImpactFlights = "Does this cause any impact to any flights?"
-;promptFlightNumbers = "What flight(s) impacted?"
-;promptImpactFinance = "If there are no flights impacted; does this issue have any financial impact?"
-
-;InputBox, rptSystem, AD Input, %promptSystem%
-;InputBox, rptAffectedUsers, AD Input, %promptUsers%
-;InputBox, rptActivityStoped, AD Input, %promptActivity%
-;InputBox, rptImpactStns, AD Input, %promptImpactStns%
-;InputBox, rptImpactFlights, AD Input, %promptImpactFlights%
-;InputBox, rptFlightNumbers, AD Input, %promptFlightNumbers%
-;InputBox, rptImpactFinance, AD Input, %promptImpactFinance%
-;if FileExist(%ReportPath%){
-;	FileDelete, %ReportPath%
-;}
-;FileAppend, promptSystem . "	" . rptSystem . crlf , ReportPath
-;FileAppend, promptUsers . "	" . rptAffectedUsers . crlf , ReportPath
-;FileAppend, promptActivity . "	" . rptActivityStoped . crlf , ReportPath
-;FileAppend, promptImpactStns . "	" . rptImpactStns . crlf , ReportPath
-;FileAppend, promptImpactFlights . "	" . rptImpactFlight . crlf , ReportPath
-;FileAppend, promptFlightNumbers . "	" . rptFlightNumbers. crlf , ReportPath
-;FileAppend, promptImpactFinance . "	" . rptImpactFinance. crlf , ReportPath
-;Sleep, 250
-;Run, "notepad.exe " . ReportPath
-;return
-
-
-
-;miCheck()
 ;;;;;;;;;;;;;;;;
 ;<summary>Default Customer Entry</summary>
 ;<remarks>todo</remarks>
