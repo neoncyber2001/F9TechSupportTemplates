@@ -55,7 +55,8 @@ PARAM (
     [switch]$ForceDownload = $false,
     [switch]$Cleanup = $false,
     [switch]$SaveOutput = $false,
-    [string]$OutputPath = $([string]::Empty)
+    [string]$OutputPath = $([string]::Empty),
+    [switch]$LeaveNoTrace = $false
 )
 
 
@@ -169,5 +170,9 @@ FindTool
 RunTool
 if($Cleanup){
     DoCleanup -Files $CleanupFiles
+    if($LeaveNoTrace){
+        Write-Host "DEEP CLEANING LEAVES ONLY" -BackgroundColor DarkRed -ForegroundColor Red
+        Remove-Item -Path $env:APPDATA\Ookla -Recurse
+    }
 }
 
