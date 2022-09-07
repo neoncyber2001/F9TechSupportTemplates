@@ -15,3 +15,5 @@ function getPasswd(){
     console.log(outBuffer);
     PasswordElement.innerHTML=outBuffer;
 }
+
+console.log(('b' + 'a' + + 'a'+'a').toLowerCase());
